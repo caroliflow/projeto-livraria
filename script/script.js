@@ -20,18 +20,12 @@ document.getElementById("store-data").addEventListener("change", (event) => {
 
 login_form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const inputs = event.target.childNodes;
+  const inputs = event.target.children;
 
   let email;
   let password;
 
-  inputs.forEach((input) => {
-    if (input.id === "email") {
-      email = input.value;
-    } else if (input.id === "password") {
-      password = input.value;
-    }
-  });
+  for (let i = 0; i < )
 });
 
 function LogIn(email, password) {
