@@ -1,10 +1,5 @@
 var store_data;
 
-const login_form = document.getElementById("login");
-
-var logged = false;
-var login_type = "";
-
 document.getElementById("store-data").addEventListener("change", (event) => {
   const file = event.target.files[0];
   console.log(file);
@@ -18,30 +13,11 @@ document.getElementById("store-data").addEventListener("change", (event) => {
   reader.readAsText(file);
 });
 
-login_form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const inputs = event.target.children;
 
-  let email;
-  let password;
-
-  for (let i = 0; i < )
-});
-
-function LogIn(email, password) {
-  const users = store_data.usuarios;
-  users.forEach((user) => {
-    if (user.email == email || user.password == password) {
-      logged = true;
-      login_type = user.tipo;
-    } else {
-      console.log("Coudldn't log In");
-    }
-  });
-}
 
 function getInformation(data) {
   const test = document.getElementById("test");
+
   data.usuarios.forEach((user) => {
     test.innerHTML += `
       <p>
