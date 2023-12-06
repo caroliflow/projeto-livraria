@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -12,7 +11,9 @@
     <title>Comic Store</title>
   </head>
   <body>
-    <input type="file" name="dados" id="store-data" />
+    <div class="drop-area" id="drop-area">
+      <input type="file" accept=".json" name="dados" id="file-input" />
+    </div>
     <form id="login">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" />
@@ -22,7 +23,17 @@
 
       <input type="submit" value="Login" />
     </form>
+    <style>
+      .drop-area {
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 100px;
+      }
+    </style>
     <section id="test"></section>
   </body>
-  <script src="script/script.js"></script>
+  <script src="script/main.js"></script>
 </html>
