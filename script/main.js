@@ -4,6 +4,31 @@ const file_container = document.getElementById("f-c");
 const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
 
+class Store {
+  constructor() {
+    this._products = [];
+    this.sells = [];
+  }
+
+  addProduct(product, element) {
+    this._products.push(product);
+
+    let itemModel = `
+      <p>Nome: ${product.name}</p>
+      <p>Price: ${product.price}</p>
+      <p>Description: ${product.description}</p>
+      <p>Type: ${product.type}</p>
+      <p>Img: ${product.image}</p>
+    `;
+
+    element.innerHTML += itemModel;
+  }
+
+  get allProducts() {
+    return this._products;
+  }
+}
+
 class Product {
   constructor(name, price, description, type, img) {
     this.name = name;
@@ -12,22 +37,22 @@ class Product {
     this.type = type;
     this.image = img;
   }
-  edit_description(text) {
+  editDescription(text) {
     this.description = text;
   }
-  get_name() {
+  get name() {
     return this.name;
   }
-  get_price() {
+  get price() {
     return this.price;
   }
-  get_description() {
+  get description() {
     return this.description;
   }
-  get_type() {
+  get type() {
     return this.type;
   }
-  get_image() {
+  get image() {
     return this.image;
   }
 }
@@ -37,7 +62,7 @@ file_input.addEventListener("change", (event) => {
   event.preventDefault();
 
   const file = event.target.files;
-  read_JSON(file);
+  readJSON(file);
 });
 
 drop_area.addEventListener("dragover", (event) => {
@@ -51,10 +76,10 @@ drop_area.addEventListener("drop", (event) => {
   event.preventDefault();
 
   const file = event.dataTransfer.files;
-  read_JSON(file);
+  readJSON(file);
 });
 
-function read_JSON(file) {
+function readJSON(file) {
   const json = file[0];
 
   if (json.type && !json.type.endsWith("/json")) {
@@ -68,8 +93,19 @@ function read_JSON(file) {
   reader.onload = function (event) {
     const content = event.target.result;
     store_data = JSON.parse(content);
-    getInformation(store_data);
   };
 
   reader.readAsText(json);
+}
+
+function renderItems() {
+  if (store_data) {
+    let products = store_data.usuarios;
+
+    products.forEach((item) => {
+      
+    });
+  } else {
+    console.log("no information");
+  }
 }

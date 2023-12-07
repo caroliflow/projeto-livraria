@@ -24,5 +24,14 @@
       "cargo": "Veterinário",
       "tipo": "comum"
     }
+  ],
+  "products": [
+    {
+      "name": "Café",
+      "price": 10.5,
+      "description": "um belo café",
+      "type": "alimenticio",
+      "img": "#"
+    }
   ]
 }
