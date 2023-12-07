@@ -1,0 +1,35 @@
+.file-container {
+  display: none; 
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-file {
+  display: flex;
+}
+
+.file-container img {
+  height: 400px;
+  width: 400px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.btn-file {
+  background-color: var(--pink);
+  display: flex;
+  width: 350px;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 20px;
+  color: var(--purple);
+  padding: 20px;
+}
