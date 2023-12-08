@@ -1,28 +1,37 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nome": "Ana Souza Silva",
-            "email": "ana@js.com",
-            "senha": "1234",
-            "cargo": "proprietária",
-            "tipo": "admin"
-        },
-        {
-            "id": 2,
-            "nome": "Mariana Almeida Silva",
-            "email": "mariana@js.com",
-            "senha": "1234",
-            "cargo": "Ajudante Geral",
-            "tipo": "comum"
-        },
-        {
-            "id": 3,
-            "nome": "André de Almeida Sales",
-            "email": "andre@js.com",
-            "senha": "1234",
-            "cargo": "Veterinário",
-            "tipo": "comum"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Ana Souza Silva",
+      "email": "ana@js.com",
+      "senha": "1234",
+      "cargo": "proprietária",
+      "tipo": "admin"
+    },
+    {
+      "id": 2,
+      "nome": "Mariana Almeida Silva",
+      "email": "mariana@js.com",
+      "senha": "1234",
+      "cargo": "Ajudante Geral",
+      "tipo": "comum"
+    },
+    {
+      "id": 3,
+      "nome": "André de Almeida Sales",
+      "email": "andre@js.com",
+      "senha": "1234",
+      "cargo": "Veterinário",
+      "tipo": "comum"
+    }
+  ],
+  "products": [
+    {
+      "name": "Café",
+      "price": 10.5,
+      "description": "um belo café",
+      "type": "alimenticio",
+      "img": "#"
+    }
+  ]
 }
