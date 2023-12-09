@@ -27,10 +27,51 @@
   ],
   "products": [
     {
-      "name": "Café",
+      "id": 1,
+      "name": "Mistborn",
       "price": 10.5,
-      "description": "um belo café",
-      "type": "alimenticio",
+      "description": "um belo livro",
+      "type": "BOOK",
+      "img": "#"
+    },
+    {
+      "id": 2,
+      "name": "Relógio",
+      "price": 25,
+      "description": "um belo relógio",
+      "type": "COLLECTIBLE",
+      "img": "#"
+    },
+    {
+      "id": 3,
+      "name": "Calça",
+      "price": 35,
+      "description": "uma bela calça",
+      "type": "CLOTHING",
+      "img": "#"
+    },
+    {
+      "id": 4,
+      "name": "Guilty Gear -Strive-",
+      "price": 40,
+      "description": "um belo jogo",
+      "type": "GAME",
+      "img": "#"
+    },
+    {
+      "id": 5,
+      "name": "The Witcher 3",
+      "price": 40,
+      "description": "um belo jogo",
+      "type": "GAME",
+      "img": "#"
+    },
+    {
+      "id": 6,
+      "name": "Lapiseira",
+      "price": 27,
+      "description": "um belo material",
+      "type": "SUPPLY",
       "img": "#"
     }
   ]

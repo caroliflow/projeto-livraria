@@ -1,0 +1,46 @@
+ - Funcionalidades Obrigatórias
+	- Ler e salvar arquivos JSON
+	- Sistema de Login
+		- Acessos diferentes: ADM, Comum, Visitante
+	- Loja Física
+
+ - Privilégios
+	- Administrador
+		- Adicionar Produtos
+		- Remover Produtos
+		- Excluir compras
+		- Acessar informações gerais da empresa
+		- Todos os privilégios de comum e visitante
+	- Comum
+		- Adicionar compras
+		- Informações próprias de vendas
+		- Todas os privilégios de visitante
+	- Visitante
+		- Olhar a loja
+
+ - Produtos da Loja
+	- Colecionáveis
+		- Action Figure
+		- Posters
+		- Broche
+	- Livros
+		- Mangás
+		- Quadrinhos
+		- Gibi
+		- Cordel
+		- Literatura
+	- Vestuário
+		- Camisetas
+		- Bonés
+		- Óculos
+		- Moletom
+	- Jogos
+		- Jogo tabuleiro
+		- Blueray de jogos
+		- Gitcards		
+	- Material Escolar
+		- Lápis
+		- Caneta
+		- Cadernos
+		- Mochilas
+		- Estojo

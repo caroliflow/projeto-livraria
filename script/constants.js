@@ -14,4 +14,12 @@ const actions = {
   VIEW_SELL: "VIEW_INFORMATION",
 };
 
-export { actions, roles };
+const product_types = {
+  COLLECTIBLE: "COLLECTIBLE",
+  CLOTHING: "CLOTHING",
+  BOOK: "BOOK",
+  GAME: "GAME",
+  SUPPLY: "SUPPLY"
+}
+
+export { actions, roles, product_types};
