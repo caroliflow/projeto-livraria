@@ -37,17 +37,18 @@ class Store {
   }
 
   placeItems(element, filter=[]) {
+    //element.innerHTML = "";
+
     Object.values(this._products).forEach((type) => {
       type.forEach((item) => {
         let itemModel = `
-          <p>
-            <span>${item.id}</span> </br>
+          <p id="item-${item.id}">
             Nome: ${item.name} </br>
             Price: ${item.price} </br>
             Description: ${item.description} </br>
-            Type: ${item.type} </br>
             Img: ${item.image} </br>
             <button class="remove-btn" type="button">Remove</button>
+            <span>${item.type}</span> 
           </p>
         `;
 
@@ -56,7 +57,7 @@ class Store {
     });
   }
 
-  get allProducts() {
+  get allItems() {
     return this._products;
   }
 }
@@ -159,7 +160,18 @@ render.addEventListener("click", function() {
 
   remove_buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const item_id = event.target.parentNode.firstElementChild;
+      const item_id = Number(event.target.parentNode.id.split("-")[1]);
+      const item_type = event.target.parentNode.lastElementChild.textContent;
+      let remove;
+
+      store.allItems[item_type].forEach((item) => {
+        if (item.id === item_id) {
+          remove = item;
+        }
+      });
+
+      store.removeItem(remove);
+      event.target.parentNode.remove();
     }) 
   });
 });
