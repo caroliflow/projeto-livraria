@@ -93,4 +93,3 @@ function allow_remove_buttons() {
     });
   });
 }
-

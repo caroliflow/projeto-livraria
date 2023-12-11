@@ -6,6 +6,7 @@ export default class Store {
       COLLECTIBLE: [],
       GAME: [],
       SUPPLY: [],
+      MOVIE: [],
     };
     this._sells = new Array();
   }
