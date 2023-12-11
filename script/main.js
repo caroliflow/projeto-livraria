@@ -1,98 +1,10 @@
-import { product_types } from "./constants.js";
+import Store from "./classes/store.js";
+import Product from "./classes/product.js";
 
-let store_data;
-
-const file_container = document.getElementById("f-c");
 const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
 
-class Store {
-  constructor() {
-    this._products = {
-      BOOK: [],
-      CLOTHING: [],
-      COLLECTIBLE: [],
-      GAME: [],
-      SUPPLY: [],
-    };
-    this._sells = new Array();
-  }
-
-  addItem(item) {
-    if (item.type in this._products) {
-      this._products[item.type].push(item);
-    } else {
-      console.log("unrecognized type");
-    }
-  }
- 
-  removeItem(item) {
-    let remove = this._products[item.type].indexOf(item);
-
-    if (remove > -1) {
-      this._products[item.type].splice(remove, 1);
-    } else {
-      console.log("item not found");
-    }
-  }
-
-  placeItems(element, filter=[]) {
-    //element.innerHTML = "";
-
-    Object.values(this._products).forEach((type) => {
-      type.forEach((item) => {
-        let itemModel = `
-          <p id="item-${item.id}">
-            Nome: ${item.name} </br>
-            Price: ${item.price} </br>
-            Description: ${item.description} </br>
-            Img: ${item.image} </br>
-            <button class="remove-btn" type="button">Remove</button>
-            <span>${item.type}</span> 
-          </p>
-        `;
-
-        element.innerHTML += itemModel;
-      });
-    });
-  }
-
-  get allItems() {
-    return this._products;
-  }
-}
-
-class Product {
-  constructor(id, name, price, description, type, img) {
-    this._id = id;
-    this._name = name;
-    this._price = price;
-    this._description = description;
-    this._type = type;
-    this._image = img;
-  }
-  editDescription(text) {
-    this.description = text;
-  }
-  get id() {
-    return this._id;
-  }
-  get name() {
-    return this._name;
-  }
-  get price() {
-    return this._price;
-  }
-  get description() {
-    return this._description;
-  }
-  get type() {
-    return this._type;
-  }
-  get image() {
-    return this._image;
-  }
-}
+let store_data;
 
 file_input.addEventListener("change", (event) => {
   event.stopPropagation();
@@ -120,7 +32,6 @@ function readJSON(file) {
   const json = file[0];
 
   if (json.type && !json.type.endsWith("/json")) {
-    //file_container += "<p>Por favor, selecione um arquivo do tipo JSON</p>";
     console.log("not json file");
     return undefined;
   }
@@ -139,23 +50,28 @@ const store = new Store();
 const render = document.getElementById("render");
 const test = document.getElementById("test");
 
-render.addEventListener("click", function() {
+render.addEventListener("click", (event) => {
   let products = store_data.products;
-  
+
   products.forEach((product) => {
     const item = new Product(
       product.id,
-      product.name, 
-      product.price, 
-      product.description, 
-      product.type, 
+      product.name,
+      product.price,
+      product.description,
+      product.type,
       product.img
     );
     store.addItem(item);
   });
 
-  store.placeItems(test);
+  event.target.remove();
 
+  store.placeItems(test);
+  allow_remove_buttons();
+});
+
+function allow_remove_buttons() {
   const remove_buttons = document.querySelectorAll(".remove-btn");
 
   remove_buttons.forEach((button) => {
@@ -172,8 +88,9 @@ render.addEventListener("click", function() {
 
       store.removeItem(remove);
       event.target.parentNode.remove();
-    }) 
-  });
-});
 
+      console.log(store.allItems);
+    });
+  });
+}
 
