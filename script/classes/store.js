@@ -7,6 +7,7 @@ export default class Store {
       GAME: [],
       SUPPLY: [],
       MOVIE: [],
+      GIFTCARD: [],
     };
     this._sells = new Array();
   }
@@ -39,7 +40,7 @@ export default class Store {
             Nome: ${item.name} </br>
             Price: ${item.price} </br>
             Description: ${item.description} </br>
-            Img: ${item.image} </br>
+            <img src="${item.image}"/> </br>
             <button class="remove-btn" type="button">Remove</button>
             <span>${item.type}</span> 
           </p>

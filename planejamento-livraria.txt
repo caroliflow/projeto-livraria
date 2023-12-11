@@ -37,7 +37,7 @@
 	- Jogos
 		- Jogo tabuleiro
 		- Blueray de jogos
-		- Gitcards		
+		- Gitcards
 	- Material Escolar
 		- Lápis
 		- Caneta
