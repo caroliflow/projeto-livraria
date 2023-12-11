@@ -1,49 +1,49 @@
 export default class Product {
   constructor(id, name, price, description, type, img) {
-    this._id = id;
-    this._name = name;
-    this._price = price;
-    this._description = description;
-    this._type = type;
-    this._image = img;
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.description = description;
+    this.type = type;
+    this.image = img;
   }
 
   editName(name) {
-    this._name = name;
+    this.name = name;
   }
 
   editPrice(price) {
-    this._description = price;
+    this.description = price;
   }
 
   editDescription(text) {
-    this._description = text;
+    this.description = text;
   }
 
   editType(type) {
-    this._type = type;
+    this.type = type;
   }
 
-  editImage(image) {
-    this._image = image;
+  changeImage(image) {
+    this.image = image;
   }
 
-  get id() {
-    return this._id;
+  get ID() {
+    return this.id;
   }
-  get name() {
-    return this._name;
+  get NAME() {
+    return this.name;
   }
-  get price() {
-    return this._price;
+  get PRICE() {
+    return this.price;
   }
-  get description() {
-    return this._description;
+  get DESCRIPTION() {
+    return this.description;
   }
-  get type() {
-    return this._type;
+  get TYPE() {
+    return this.type;
   }
-  get image() {
-    return this._image;
+  get IMAGE() {
+    return this.image;
   }
 }

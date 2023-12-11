@@ -1,6 +1,11 @@
 import Store from "./classes/store.js";
 import Product from "./classes/product.js";
 
+const store = new Store();
+const render = document.getElementById("render");
+const test = document.getElementById("test");
+const download = document.getElementById("download");
+
 const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
 
@@ -46,9 +51,27 @@ function readJSON(file) {
   reader.readAsText(json);
 }
 
-const store = new Store();
-const render = document.getElementById("render");
-const test = document.getElementById("test");
+download.addEventListener("click", () => {
+  const data = {
+    users: [],
+    products: []
+  }
+
+  store_data.users.forEach((user) => {
+    data["users"].push(user);
+  });
+
+  for (let key in store.allItems) {
+    store.allItems[key].forEach((item) => {
+      data["products"].push(item);
+    });
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = "data:," + JSON.stringify(data);;
+  anchor.download = "dados.json";
+  anchor.click();
+});
 
 render.addEventListener("click", (event) => {
   let products = store_data.products;
@@ -81,7 +104,7 @@ function allow_remove_buttons() {
       let remove;
 
       store.allItems[item_type].forEach((item) => {
-        if (item.id === item_id) {
+        if (item.ID === item_id) {
           remove = item;
         }
       });
@@ -93,3 +116,5 @@ function allow_remove_buttons() {
     });
   });
 }
+
+
