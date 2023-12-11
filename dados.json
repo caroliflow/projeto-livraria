@@ -1,78 +1,190 @@
 {
-  "usuarios": [
-    {
-      "id": 1,
-      "nome": "Ana Souza Silva",
-      "email": "ana@js.com",
-      "senha": "1234",
-      "cargo": "proprietária",
-      "tipo": "admin"
-    },
-    {
-      "id": 2,
-      "nome": "Mariana Almeida Silva",
-      "email": "mariana@js.com",
-      "senha": "1234",
-      "cargo": "Ajudante Geral",
-      "tipo": "comum"
-    },
-    {
-      "id": 3,
-      "nome": "André de Almeida Sales",
-      "email": "andre@js.com",
-      "senha": "1234",
-      "cargo": "Veterinário",
-      "tipo": "comum"
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Mistborn",
-      "price": 10.5,
-      "description": "um belo livro",
-      "type": "BOOK",
-      "img": "#"
-    },
-    {
-      "id": 2,
-      "name": "Relógio",
-      "price": 25,
-      "description": "um belo relógio",
-      "type": "COLLECTIBLE",
-      "img": "#"
-    },
-    {
-      "id": 3,
-      "name": "Calça",
-      "price": 35,
-      "description": "uma bela calça",
-      "type": "CLOTHING",
-      "img": "#"
-    },
-    {
-      "id": 4,
-      "name": "Guilty Gear -Strive-",
-      "price": 40,
-      "description": "um belo jogo",
-      "type": "GAME",
-      "img": "#"
-    },
-    {
-      "id": 5,
-      "name": "The Witcher 3",
-      "price": 40,
-      "description": "um belo jogo",
-      "type": "GAME",
-      "img": "#"
-    },
-    {
-      "id": 6,
-      "name": "Lapiseira",
-      "price": 27,
-      "description": "um belo material",
-      "type": "SUPPLY",
-      "img": "#"
-    }
-  ]
-}
+    "usuarios": [
+      {
+        "id": 1,
+        "nome": "Ana Souza Silva",
+        "email": "ana@js.com",
+        "senha": "1234",
+        "cargo": "proprietária",
+        "tipo": "admin"
+      },
+      {
+        "id": 2,
+        "nome": "Mariana Almeida Silva",
+        "email": "mariana@js.com",
+        "senha": "1234",
+        "cargo": "Ajudante Geral",
+        "tipo": "comum"
+      },
+      {
+        "id": 3,
+        "nome": "André de Almeida Sales",
+        "email": "andre@js.com",
+        "senha": "1234",
+        "cargo": "Veterinário",
+        "tipo": "comum"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "Mistborn",
+        "price": 10.5,
+        "description": "um belo livro",
+        "type": "BOOK",
+        "img": "#"
+      },
+      {
+        "id": 2,
+        "name": "Relógio",
+        "price": 25,
+        "description": "um belo relógio",
+        "type": "CLOTHING",
+        "img": "#"
+      },
+      {
+        "id": 3,
+        "name": "Calça",
+        "price": 35,
+        "description": "uma bela calça",
+        "type": "CLOTHING",
+        "img": "#"
+      },
+      {
+        "id": 4,
+        "name": "Guilty Gear -Strive-",
+        "price": 40,
+        "description": "um belo jogo",
+        "type": "GAME",
+        "img": "#"
+      },
+      {
+        "id": 5,
+        "name": "The Witcher 3",
+        "price": 40,
+        "description": "um belo jogo",
+        "type": "GAME",
+        "img": "#"
+      },
+      {
+        "id": 6,
+        "name": "Lapiseira",
+        "price": 27,
+        "description": "um belo material",
+        "type": "SUPPLY",
+        "img": "#"
+      },
+      {
+        "id":7,
+        "name": "O Senho dos Anéis: O Retorno do Rei",
+        "price": 45,
+        "description": "Um bom livro",
+        "type" : "BOOK",
+        "img" : "#"
+      },
+      {
+        "id": 8,
+        "name" : "Shadow of the Colossus",
+        "price": 40,
+        "description" : "um bom jogo",
+        "type" : "GAME",
+        "img" : "#"
+      },
+      {
+        "id": 9,
+        "name" : "Boné New York Yankees",
+        "price": 150,
+        "description" : "um belo boné",
+        "type" : "CLOTHING",
+        "img" : "#"
+      },
+      {
+        "id": 10,
+        "name" : "Goku Action Figure",
+        "price": 300,
+        "description" : "um belo colecionável",
+        "type" : "COLLECTIBLE",
+        "img" : "#"
+      },
+      {
+        "id": 11,
+        "name" : "As Branquelas",
+        "price": 10,
+        "description" : "um filme engraçado",
+        "type" : "MOVIE",
+        "img" : "#"
+      },
+      {
+        "id": 12,
+        "name" : "Metal Gear Rising: Revengeance",
+        "price": 40,
+        "description" : "um ótimo jogo",
+        "type" : "GAME",
+        "img" : "#" 
+      },
+      {
+        "id": 13,
+        "name" : "Lápis",
+        "price": 1,
+        "description" : "um bom material",
+        "type" : "SUPPLY",
+        "img" : "#"
+      },
+      {
+        "id": 14,
+        "name" : "Camiseta Attack On Titan",
+        "price": 35,
+        "description" : "uma bela camiseta",
+        "type" : "CLOTHING",
+        "img" : "#"
+      },
+      {
+        "id": 15,
+        "name" : "Réplica Manopla do Infiníto",
+        "price": 1000,
+        "description" : "um belo colecionável",
+        "type" : "COLLECTIBLE",
+        "img" : "#"
+      },
+      {
+        "id": 16,
+        "name" : "The Elder Scrolls V: Skyrim",
+        "price": 40,
+        "description" : "um bom jogo",
+        "type" : "GAME",
+        "img" : "#"
+      },
+      {
+        "id": 17,
+        "name" : "Caneta Esferográfica",
+        "price": 1,
+        "description" : "um bom material",
+        "type" : "SUPPLY",
+        "img" : "#"
+      },
+      {
+        "id": 18,
+        "name" : "Par de Meias",
+        "price": 15,
+        "description" : "um bom par de meias",
+        "type" : "CLOTHING",
+        "img" : "#"
+      },
+      {
+        "id": 19,
+        "name" : "Motoqueiro Fantasma",
+        "price": 10,
+        "description" : "um bom filme",
+        "type" : "MOVIE",
+        "img" : "#"
+      },
+      {
+      "id": 20,
+      "name" : "Action Figure Homem de Ferro",
+      "price": 300,
+      "description" : "um bom colecionável",
+      "type" : "COLLECTIBLE",
+      "img" : "#"
+      }   
+    ]
+  }
