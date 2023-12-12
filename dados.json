@@ -40,6 +40,7 @@
       "price": 10.5,
       "description": "um belo livro",
       "type": "BOOK",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71rO9YgTk1L._AC_UF894,1000_QL80_.jpg"
     },
     {
@@ -48,6 +49,7 @@
       "price": 25,
       "description": "um belo relógio",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://static.zattini.com.br/produtos/relogio-masculino-esportivo-digital-resistente-a-agua/06/5U2-0420-006/5U2-0420-006_zoom1.jpg?ts=1674815992&ims=544x"
     },
     {
@@ -56,6 +58,7 @@
       "price": 35,
       "description": "uma bela calça",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://outletespacohering.vtexassets.com/arquivos/ids/2940627/H1Q4-1FSN-C1.jpg?v=638362979475200000"
     },
     {
@@ -64,6 +67,7 @@
       "price": 40,
       "description": "um belo jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/81mcWVTH2xS.jpg"
     },
     {
@@ -72,6 +76,7 @@
       "price": 40,
       "description": "um belo jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://cdn.awsli.com.br/2500x2500/2112/2112399/produto/126448276/the-witcher-3-para-ps5-midia-digital-099a2ce0.jpg"
     },
     {
@@ -80,6 +85,7 @@
       "price": 27,
       "description": "um belo material",
       "type": "SUPPLY",
+      "stock": 5,
       "img": "https://www.frutodearte.com.br/media/catalog/product/cache/12/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/l/a/lapiseira-pentel-p207-07-preta.png"
     },
     {
@@ -88,6 +94,7 @@
       "price": 45,
       "description": "Um bom livro",
       "type": "BOOK",
+      "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/01/00/img/5202803/6/5202803653_1GG.jpg"
     },
     {
@@ -96,6 +103,7 @@
       "price": 40,
       "description": "um bom jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/81vPLT9c55L._AC_UF1000,1000_QL80_.jpg"
     },
     {
@@ -104,6 +112,7 @@
       "price": 150,
       "description": "um belo boné",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://static.zattini.com.br/produtos/bone-new-era-aba-reta-fechado-mlb-ny-yankees-basic/16/F83-6107-016/F83-6107-016_zoom1.jpg?ts=1694807356&ims=544x"
     },
     {
@@ -112,6 +121,7 @@
       "price": 300,
       "description": "um belo colecionável",
       "type": "COLLECTIBLE",
+      "stock": 5,
       "img": "https://http2.mlstatic.com/D_NQ_NP_989143-MLB72167207085_102023-O.webp"
     },
     {
@@ -120,6 +130,7 @@
       "price": 10,
       "description": "um filme engraçado",
       "type": "MOVIE",
+      "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/4748562169/imagens/dvd-as-branquelas-filme/4748562169_1_large.jpg"
     },
     {
@@ -128,6 +139,7 @@
       "price": 40,
       "description": "um ótimo jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://retromtl.com/cdn/shop/products/IMG_5541-2_8366c0e5-4acf-498f-94b6-c489e955be11.jpg?v=1654889996"
     },
     {
@@ -136,6 +148,7 @@
       "price": 1,
       "description": "um bom material",
       "type": "SUPPLY",
+      "stock": 5,
       "img": "https://cdn.awsli.com.br/600x700/765/765263/produto/39799345/0fbcb9c427.jpg"
     },
     {
@@ -144,6 +157,7 @@
       "price": 35,
       "description": "uma bela camiseta",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://down-br.img.susercontent.com/file/3dccaf1ae2b96b994eb14677206a9a37"
     },
     {
@@ -152,6 +166,7 @@
       "price": 1000,
       "description": "um belo colecionável",
       "type": "COLLECTIBLE",
+      "stock": 5,
       "img": "https://blogdebrinquedo.com.br/wp-content/uploads/2018/03/20180305manopla-do-infinito-infinity-gauntlet-prop-replica-hot-toys-avengers-01.jpg"
     },
     {
@@ -160,6 +175,7 @@
       "price": 40,
       "description": "um bom jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://dw0jruhdg6fis.cloudfront.net/producao/14695299/G/the_elder_scrolls_v_skyrim.jpg"
     },
     {
@@ -168,6 +184,7 @@
       "price": 1,
       "description": "um bom material",
       "type": "SUPPLY",
+      "stock": 5,
       "img": "https://images.tcdn.com.br/img/img_prod/847325/90_caneta_esferografica_bic_cristal_ponta_media_1_0mm_72623387_1_4aa2aa4291b0e3daeb8ca602ffd30b18.jpg"
     },
     {
@@ -176,6 +193,7 @@
       "price": 15,
       "description": "um bom par de meias",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://d87n9o45kphpy.cloudfront.net/Custom/Content/Products/16/17/1617214_kit-meias-olympikus-cano-medio-stz-tres-pares-39-ao-44-color-5159862_l1_637532417635258158.jpg"
     },
     {
@@ -184,6 +202,7 @@
       "price": 10,
       "description": "um bom filme",
       "type": "MOVIE",
+      "stock": 5,
       "img": "https://media.fstatic.com/SFqV9HHv8wXt486CISvPJngb4tA=/322x478/smart/filters:format(webp)/media/movies/covers/2011/09/787e9c37a6d5f8f0363c50b39e1ba503.jpg"
     },
     {
@@ -192,6 +211,7 @@
       "price": 300,
       "description": "um bom colecionável",
       "type": "COLLECTIBLE",
+      "stock": 5,
       "img": "https://a-static.mlcdn.com.br/450x450/homem-de-ferro-iron-man-mk85-ultimato-action-figure-17-cm-actioncollection/actionkrypton/16023924154/547c7c088d7487b3951e3849956f41c1.jpeg"
     },
     {
@@ -200,6 +220,7 @@
       "price": 130,
       "description": "um bom mateial",
       "type": "SUPPLY",
+      "stock": 5,
       "img": "https://http2.mlstatic.com/D_NQ_NP_666755-MLA53474931164_012023-O.webp"
     },
     {
@@ -208,6 +229,7 @@
       "price": 55,
       "description": "uma boa roupa",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://cdn.awsli.com.br/2500x2500/304/304285/produto/165691424/novo-shorts-vinho-etiquetaemborrachada-aitvvz.jpg"
     },
     {
@@ -216,6 +238,7 @@
       "price": 50,
       "description": "bons gift cards",
       "type": "GIFTCARD",
+      "stock": 5,
       "img": "https://st.recargapay.com/public/av-a/img/lp_gifts/lprp_valepresente_jumbotron.png"
     },
     {
@@ -224,6 +247,7 @@
       "price": 300,
       "description": "um bom jogo",
       "type": "GAME",
+      "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/01/00/img/4501722/3/4501722386_1SZ.jpg"
     },
     {
@@ -232,6 +256,7 @@
       "price": "10",
       "description": "um bom filme",
       "type": "MOVIE",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/61LYGcxF+xL._AC_UF894,1000_QL80_.jpg"
     },
     {
@@ -240,6 +265,7 @@
       "price": 35,
       "description": "Um bom livro",
       "type": "BOOK",
+      "stock": 5,
       "img": "https://down-br.img.susercontent.com/file/0c0400ccadc79c266ff1f07ec2b48898"
     },
     {
@@ -248,6 +274,7 @@
       "price": 55,
       "description": "um bom mateial",
       "type": "SUPPLY",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71ZWhGQri+L._AC_SX522_.jpg"
     },
     {
@@ -256,6 +283,7 @@
       "price": 200,
       "description": "um bom RPG",
       "type": "GAME",
+      "stock": 5,
       "img": "https://images.tcdn.com.br/img/img_prod/1041703/dungeons_dragons_waterdeep_a_masmorra_do_mago_louco_2251_1_072cabe647f2ae8b4b9639b570a45c98.jpg"
     },
     {
@@ -264,6 +292,7 @@
       "price": 35,
       "description": "um bom mangá",
       "type": "BOOK",
+      "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71RPJe1eVCL._AC_UF894,1000_QL80_.jpg"
     },
     {
@@ -272,6 +301,7 @@
       "price": 150,
       "description": "um bom óculos",
       "type": "CLOTHING",
+      "stock": 5,
       "img": "https://chillibeans.vteximg.com.br/arquivos/ids/505398-1000-1000/OC-MT-3614-2022_300kb.jpg?v=638179587706500000"
     }
   ]
