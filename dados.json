@@ -193,6 +193,86 @@
       "description": "um bom colecionável",
       "type": "COLLECTIBLE",
       "img": "https://a-static.mlcdn.com.br/450x450/homem-de-ferro-iron-man-mk85-ultimato-action-figure-17-cm-actioncollection/actionkrypton/16023924154/547c7c088d7487b3951e3849956f41c1.jpeg"
+    },
+    {
+      "id": 21,
+      "name": "Mochila",
+      "price": 130,
+      "description": "um bom mateial",
+      "type": "SUPPLY",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_666755-MLA53474931164_012023-O.webp"
+    },
+    {
+      "id": 22,
+      "name": "Shorts Masculino",
+      "price": 55,
+      "description": "uma boa roupa",
+      "type": "CLOTHING",
+      "img": "https://cdn.awsli.com.br/2500x2500/304/304285/produto/165691424/novo-shorts-vinho-etiquetaemborrachada-aitvvz.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Gift Cards",
+      "price": 50,
+      "description": "bons gift cards",
+      "type": "GIFTCARD",
+      "img": "https://st.recargapay.com/public/av-a/img/lp_gifts/lprp_valepresente_jumbotron.png"
+    },
+    {
+      "id": 24,
+      "name": "Elden Ring",
+      "price": 300,
+      "description": "um bom jogo",
+      "type": "GAME",
+      "img": "https://images-americanas.b2w.io/produtos/01/00/img/4501722/3/4501722386_1SZ.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Star Wars: A Vingança dos Sith",
+      "price": "10",
+      "description": "um bom filme",
+      "type": "MOVIE",
+      "img": "https://m.media-amazon.com/images/I/61LYGcxF+xL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Harry Potter e o Cálice de Fogo",
+      "price": 35,
+      "description": "Um bom livro",
+      "type": "BOOK",
+      "img": "https://down-br.img.susercontent.com/file/0c0400ccadc79c266ff1f07ec2b48898"
+    },
+    {
+      "id": 27,
+      "name": "Estojo Escolar",
+      "price": 55,
+      "description": "um bom mateial",
+      "type": "SUPPLY",
+      "img": "https://m.media-amazon.com/images/I/71ZWhGQri+L._AC_SX522_.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Dungeons and Dragons",
+      "price": 200,
+      "description": "um bom RPG",
+      "type": "GAME",
+      "img": "https://images.tcdn.com.br/img/img_prod/1041703/dungeons_dragons_waterdeep_a_masmorra_do_mago_louco_2251_1_072cabe647f2ae8b4b9639b570a45c98.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Spy X Family",
+      "price": 35,
+      "description": "um bom mangá",
+      "type": "BOOK",
+      "img": "https://m.media-amazon.com/images/I/71RPJe1eVCL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Óculos Escuros",
+      "price": 150,
+      "description": "um bom óculos",
+      "type": "CLOTHING",
+      "img": "https://chillibeans.vteximg.com.br/arquivos/ids/505398-1000-1000/OC-MT-3614-2022_300kb.jpg?v=638179587706500000"
     }
   ]
 }
