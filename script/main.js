@@ -54,23 +54,27 @@ function readJSON(file) {
 download.addEventListener("click", () => {
   const data = {
     users: [],
-    products: []
-  }
+    products: [],
+  };
 
   store_data.users.forEach((user) => {
     data["users"].push(user);
   });
 
+  let id = 0;
   for (let key in store.allItems) {
     store.allItems[key].forEach((item) => {
+      id++;
+      item.id = id;
       data["products"].push(item);
     });
   }
 
   const anchor = document.createElement("a");
-  anchor.href = "data:," + JSON.stringify(data);;
+  anchor.href = "data:text/json;charset=utf-8," + JSON.stringify(data);
   anchor.download = "dados.json";
   anchor.click();
+  console.log(anchor.href);
 });
 
 render.addEventListener("click", (event) => {
@@ -83,6 +87,7 @@ render.addEventListener("click", (event) => {
       product.price,
       product.description,
       product.type,
+      product.stock,
       product.img
     );
     store.addItem(item);
@@ -91,25 +96,33 @@ render.addEventListener("click", (event) => {
   event.target.remove();
 
   store.placeItems(test);
+
   allow_remove_buttons();
+  allow_sell_buttons();
 });
+
+function searchItem(element) {
+  const item_id = Number(element.target.parentNode.id.split("-")[1]);
+  const item_type = element.target.parentNode.lastElementChild.textContent;
+  let remove;
+
+  store.allItems[item_type].forEach((item) => {
+    if (item.ID === item_id) {
+      remove = item;
+    }
+  });
+
+  return remove;
+}
 
 function allow_remove_buttons() {
   const remove_buttons = document.querySelectorAll(".remove-btn");
 
   remove_buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const item_id = Number(event.target.parentNode.id.split("-")[1]);
-      const item_type = event.target.parentNode.lastElementChild.textContent;
-      let remove;
+      let item = searchItem(event);
 
-      store.allItems[item_type].forEach((item) => {
-        if (item.ID === item_id) {
-          remove = item;
-        }
-      });
-
-      store.removeItem(remove);
+      store.removeItem(item);
       event.target.parentNode.remove();
 
       console.log(store.allItems);
@@ -117,4 +130,15 @@ function allow_remove_buttons() {
   });
 }
 
+function allow_sell_buttons() {
+  const sell_buttons = document.querySelectorAll(".sell-btn");
 
+  sell_buttons.forEach((sell) => {
+    sell.addEventListener("click", (event) => {
+      let item = searchItem(event);
+      item.removeStocks(1);
+      store.placeItems(test);
+      console.log(item.STOCK);
+    });
+  });
+}

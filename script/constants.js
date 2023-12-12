@@ -11,7 +11,17 @@ const actions = {
   VIEW_ITEM: "VIEW_ITEM",
   ADD_SELL: "ADD_SELL",
   REMOVE_SELL: "REMOVE_SELL",
-  VIEW_SELL: "VIEW_INFORMATION",
+  VIEW_SELL: "VIEW_SELL",
 };
 
-export { actions, roles };
+const product_types = {
+  BOOK: [],
+  CLOTHING: [],
+  COLLECTIBLE: [],
+  GAME: [],
+  SUPPLY: [],
+  MOVIE: [],
+  GIFTCARD: [],
+};
+
+export { actions, roles, product_types };

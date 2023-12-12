@@ -1,14 +1,7 @@
+import { product_types } from "../constants.js";
 export default class Store {
   constructor() {
-    this._products = {
-      BOOK: [],
-      CLOTHING: [],
-      COLLECTIBLE: [],
-      GAME: [],
-      SUPPLY: [],
-      MOVIE: [],
-      GIFTCARD: [],
-    };
+    this._products = product_types; // An object with all the types with arrays inside them
     this._sells = new Array();
   }
 
@@ -31,7 +24,7 @@ export default class Store {
   }
 
   placeItems(element, filter = []) {
-    //element.innerHTML = "";
+    element.innerHTML = "";
 
     Object.values(this._products).forEach((type) => {
       type.forEach((item) => {
@@ -40,8 +33,10 @@ export default class Store {
             Nome: ${item.NAME} </br>
             Price: ${item.PRICE} </br>
             Description: ${item.DESCRIPTION} </br>
+            Stock: ${item.STOCK} </br>
             <img src="${item.IMAGE}"/> </br>
-            <button class="remove-btn" type="button">Remove</button>
+            <button class="remove-btn" type="button">Remove</button> </br>
+            <button class="sell-btn" type="button">Sell Item</button>
             <span>${item.TYPE}</span> 
           </p>
         `;

@@ -1,10 +1,11 @@
 export default class Product {
-  constructor(id, name, price, description, type, img) {
+  constructor(id, name, price, description, type, stock, img) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.description = description;
     this.type = type;
+    this.stock = stock;
     this.image = img;
   }
 
@@ -22,6 +23,10 @@ export default class Product {
 
   editType(type) {
     this.type = type;
+  }
+
+  removeStocks(amount) {
+    this.stock -= amount;
   }
 
   changeImage(image) {
@@ -42,6 +47,9 @@ export default class Product {
   }
   get TYPE() {
     return this.type;
+  }
+  get STOCK() {
+    return this.stock;
   }
   get IMAGE() {
     return this.image;
