@@ -1,10 +1,23 @@
 import Store from "./classes/store.js";
 import Product from "./classes/product.js";
 
+import has_permission from "./permissions.js";
+import { actions } from "./constants.js";
+
 const store = new Store();
 const render = document.getElementById("render");
 const test = document.getElementById("test");
 const download = document.getElementById("download");
+
+const login_form = document.getElementById("login");
+
+let logged = false;
+const loggedUser = {
+  EMAIL: "",
+  PASSWORD: "",
+  TYPE: ""
+}
+
 
 const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
@@ -76,6 +89,48 @@ download.addEventListener("click", () => {
   anchor.click();
   console.log(anchor.href);
 });
+
+
+login_form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const inputs = event.target.childNodes;
+
+  const auth = {
+    EMAIL: "",
+    PASSWORD: "",
+  };
+
+  for (let i = 0; i < inputs.length; i++) {
+    let input = inputs[i];
+    if (input.id == "email") {
+      auth["EMAIL"] = input.value;
+    } else if (input.id == "password") {
+      auth["PASSWORD"] = input.value;
+    }
+  }
+
+  if (login(auth)) {
+    loggedUser["EMAIL"] = auth["EMAIL"];
+    loggedUser["PASSWORD"] = auth["PASSWORD"];
+    console.log("Logged in");
+  } else {
+    console.log("couldn't log in");
+  }
+});
+
+function login(auth) {
+  const users = store_data.users;
+  let log = false;
+
+  users.forEach((user) => {
+    if (user.email === auth["EMAIL"] && auth["PASSWORD"] === user.password) {
+      loggedUser["TYPE"] = user.type;
+      log = true;
+    } 
+  });
+
+  return log;
+}
 
 render.addEventListener("click", (event) => {
   let products = store_data.products;

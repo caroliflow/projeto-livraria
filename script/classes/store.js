@@ -1,7 +1,8 @@
 import { product_types } from "../constants.js";
+
 export default class Store {
   constructor() {
-    this._products = product_types; // An object with all the types with arrays inside them
+    this._products = product_types; // An object containing all the types with arrays inside them
     this._sells = new Array();
   }
 
@@ -37,6 +38,7 @@ export default class Store {
             <img src="${item.IMAGE}"/> </br>
             <button class="remove-btn" type="button">Remove</button> </br>
             <button class="sell-btn" type="button">Sell Item</button>
+            <button class="edit-btn" type="button">Edit</button>
             <span>${item.TYPE}</span> 
           </p>
         `;
