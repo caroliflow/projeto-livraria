@@ -71,7 +71,7 @@ download.addEventListener("click", () => {
   }
 
   const anchor = document.createElement("a");
-  anchor.href = "data:text/json;charset=utf-8," + JSON.stringify(data);
+  anchor.href = "data:text/json;charset=utf-8;lang=pt-BR," + JSON.stringify(data);
   anchor.download = "dados.json";
   anchor.click();
   console.log(anchor.href);
@@ -96,9 +96,6 @@ render.addEventListener("click", (event) => {
   event.target.remove();
 
   store.placeItems(test);
-
-  allow_remove_buttons();
-  allow_sell_buttons();
 });
 
 function searchItem(element) {
@@ -115,30 +112,26 @@ function searchItem(element) {
   return remove;
 }
 
-function allow_remove_buttons() {
-  const remove_buttons = document.querySelectorAll(".remove-btn");
+test.addEventListener("click", (event) => {
+  let button = event.target.className;
+  
+  if (button === "remove-btn") {
+    let item = searchItem(event);
 
-  remove_buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      let item = searchItem(event);
+    store.removeItem(item);
+    event.target.parentNode.remove();
 
-      store.removeItem(item);
-      event.target.parentNode.remove();
+    console.log(store.allItems);
 
-      console.log(store.allItems);
-    });
-  });
-}
-
-function allow_sell_buttons() {
-  const sell_buttons = document.querySelectorAll(".sell-btn");
-
-  sell_buttons.forEach((sell) => {
-    sell.addEventListener("click", (event) => {
-      let item = searchItem(event);
+  } else if (button === "sell-btn") {
+    let item = searchItem(event);
+  
+    if (item.STOCK > 0) {
       item.removeStocks(1);
-      store.placeItems(test);
-      console.log(item.STOCK);
-    });
-  });
-}
+    } else {
+      console.log("out of stock");
+    }
+
+    store.placeItems(test);
+  }
+})
