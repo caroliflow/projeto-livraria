@@ -7,6 +7,11 @@ export default class Product {
     this.type = type;
     this.stock = stock;
     this.image = img;
+    this.container = document.createElement("div");
+  }
+
+  updateContainer() {
+    this.container.innerHTML = "";
   }
 
   editName(name) {
@@ -53,5 +58,8 @@ export default class Product {
   }
   get IMAGE() {
     return this.image;
+  }
+  get CONTAINER() {
+    return this.container;
   }
 }

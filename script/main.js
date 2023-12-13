@@ -146,11 +146,10 @@ render.addEventListener("click", (event) => {
       product.img
     );
     store.addItem(item);
+    store.placeItem(item, test);
   });
 
   event.target.remove();
-
-  store.placeItems(test);
 });
 
 function searchItem(element) {
@@ -187,6 +186,6 @@ test.addEventListener("click", (event) => {
       console.log("out of stock");
     }
 
-    store.placeItems(test);
+    store.updateItem(item);
   }
 })

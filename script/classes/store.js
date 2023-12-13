@@ -14,6 +14,11 @@ export default class Store {
     }
   }
 
+  updateItem(item) {
+    item.updateContainer();
+    this.placeItem(item, item.CONTAINER);
+  }
+
   removeItem(item) {
     let remove = this._products[item.TYPE].indexOf(item);
 
@@ -24,28 +29,25 @@ export default class Store {
     }
   }
 
-  placeItems(element, filter = []) {
-    element.innerHTML = "";
+  placeItem(item, element) {  
+    let itemModel = `
+      <p id="item-${item.ID}">
+        Nome: ${item.NAME} </br>
+        Price: ${item.PRICE} </br>
+        Description: ${item.DESCRIPTION} </br>
+        Stock: ${item.STOCK} </br>
+        <img src="${item.IMAGE}"/> </br>
+        <button class="remove-btn" type="button">Remove</button> </br>
+        <button class="sell-btn" type="button">Sell Item</button>
+        <button class="edit-btn" type="button">Edit</button>
+        <span>${item.TYPE}</span> 
+      </p>
+    `;
 
-    Object.values(this._products).forEach((type) => {
-      type.forEach((item) => {
-        let itemModel = `
-          <p id="item-${item.ID}">
-            Nome: ${item.NAME} </br>
-            Price: ${item.PRICE} </br>
-            Description: ${item.DESCRIPTION} </br>
-            Stock: ${item.STOCK} </br>
-            <img src="${item.IMAGE}"/> </br>
-            <button class="remove-btn" type="button">Remove</button> </br>
-            <button class="sell-btn" type="button">Sell Item</button>
-            <button class="edit-btn" type="button">Edit</button>
-            <span>${item.TYPE}</span> 
-          </p>
-        `;
-
-        element.innerHTML += itemModel;
-      });
-    });
+    item.CONTAINER.innerHTML = itemModel;
+    if (element != item.CONTAINER) {
+      element.append(item.CONTAINER);
+    }
   }
 
   get allItems() {
