@@ -16,10 +16,28 @@
   width: 400px;
 }
 
-input[type="file"] {
-  display: none;
+.drop-area {
+  width: 500px;
 }
 
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: "Upload your JSON File";
+  display: inline-block;
+  background-color: var(--pink);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  padding: 1em;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+/*
 .btn-file {
   background-color: var(--pink);
   display: flex;
@@ -33,3 +51,4 @@ input[type="file"] {
   color: var(--purple);
   padding: 20px;
 }
+*/

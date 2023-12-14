@@ -26,7 +26,7 @@ header {
 }
 
 .hide {
-  height: 0;
+  display: none;
 }
 
 /*header-flat: faixa rosa, header-center: circulo no centro*/

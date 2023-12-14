@@ -41,8 +41,11 @@ export default class Store {
         <p class="description">${item.DESCRIPTION}</p>
       </div>
       <div class="btn-container">
-        <button type="button" class="sell-btn">BUY</button>
-        <button type="button" class="remove-btn">DELETE</button>
+        <button class="sell-btn" type="button">BUY</button>
+        <button class="remove-btn" type="button">DELETE</button>
+        <button class="edit-btn" type="button">EDIT</button>
+        <button class="apply-btn hide" type="button">APPLY</button>
+        <button class="cancel-btn hide" type="button">CANCEL</button>
       </div>
       <span class="hide">${item.TYPE}</span>
     `;

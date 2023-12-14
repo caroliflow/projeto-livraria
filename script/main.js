@@ -5,7 +5,7 @@ import has_permission from "./permissions.js";
 import { actions } from "./constants.js";
 
 const store = new Store();
-const render = document.getElementById("render");
+//const render = document.getElementById("render");
 const items_section = document.getElementById("items");
 const download = document.getElementById("download");
 
@@ -26,6 +26,8 @@ let store_data;
 file_input.addEventListener("change", (event) => {
   event.stopPropagation();
   event.preventDefault();
+
+  event.target.parentNode.parentNode.classList.toggle("show-file");
 
   const file = event.target.files;
   readJSON(file);
@@ -58,6 +60,7 @@ function readJSON(file) {
   reader.onload = function (event) {
     const content = event.target.result;
     store_data = JSON.parse(content);
+    render();
   };
 
   reader.readAsText(json);
@@ -132,7 +135,7 @@ function login(auth) {
   return log;
 }
 
-render.addEventListener("click", (event) => {
+function render() {
   let products = store_data.products;
 
   products.forEach((product) => {
@@ -148,9 +151,7 @@ render.addEventListener("click", (event) => {
     store.addItem(item);
     store.placeItem(item, items_section);
   });
-
-  event.target.remove();
-});
+};
 
 function searchItem(element) {
   const item_id = Number(element.id.split("-")[1]);
@@ -168,14 +169,18 @@ function searchItem(element) {
 
 items_section.addEventListener("click", (event) => {
   let card = event.target.parentNode.parentNode;
-  let button = event.target.className;
+  let text_container = card.querySelector(".text-container");
+
+  let button = event.target;
+  let apply = card.querySelector(".apply-btn");
+  let cancel = card.querySelector(".cancel-btn");
+
   let item = searchItem(card);
 
-  switch (button) {
+  switch (button.className) {
     case "remove-btn":
       store.removeItem(item);
       card.remove();
-      console.log(store.allItems, card, item);
       break;
 
     case "sell-btn":
@@ -184,6 +189,51 @@ items_section.addEventListener("click", (event) => {
       } else {
         console.log("out of stock");
       }
+      store.updateItem(item);
+      break;
+
+    case "edit-btn":
+      text_container.childNodes.forEach((text) => {
+        text.contentEditable = "true";
+      });
+
+      button.classList.toggle("hide");
+      apply.classList.toggle("hide");
+      cancel.classList.toggle("hide");
+
+      break;
+
+    case "apply-btn":
+      let name = text_container.querySelector(".name").textContent;
+      let price = Number(text_container.querySelector(".price").textContent);
+      let type = text_container.querySelector(".type").textContent;
+      let description = text_container.querySelector(".description").textContent;
+
+      item.editName(name);
+      item.editPrice(price);
+      item.editType(type);
+      item.editDescription(description);
+
+      text_container.childNodes.forEach((text) => {
+        text.contentEditable = "false";
+      });
+
+      button.classList.toggle("hide");
+      apply.classList.toggle("hide");
+      cancel.classList.toggle("hide");
+
+      store.updateItem(item);
+      break;
+
+    case "cancel-btn":
+      text_container.childNodes.forEach((text) => {
+        text.contentEditable = "false";
+      });
+
+      button.classList.toggle("hide");
+      apply.classList.toggle("hide");
+      cancel.classList.toggle("hide");
+
       store.updateItem(item);
       break;
   }
