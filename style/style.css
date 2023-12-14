@@ -8,9 +8,9 @@
 }
 
 :root {
-  --pink: #F28D9F;
-  --purple: #4B4573;
-  --yellow: #F2C48D;
+  --pink: #f28d9f;
+  --purple: #4b4573;
+  --yellow: #f2c48d;
   --red: rgb(177, 88, 88);
 }
 
@@ -23,6 +23,10 @@ header {
   flex-direction: column;
   align-items: center;
   color: var(--purple);
+}
+
+.hide {
+  height: 0;
 }
 
 /*header-flat: faixa rosa, header-center: circulo no centro*/
@@ -119,10 +123,10 @@ main {
 
 /*botões escondidos no card*/
 
-.buy-bnt {
+.sell-bnt {
   display: none;
 }
 
-.delete-bnt {
+.remove-bnt {
   display: none;
 }

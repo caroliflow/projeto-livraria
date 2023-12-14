@@ -7,7 +7,10 @@ export default class Product {
     this.type = type;
     this.stock = stock;
     this.image = img;
+
     this.container = document.createElement("div");
+    this.container.classList.add("card-model");
+    this.container.setAttribute("id", `item-${this.id}`);
   }
 
   updateContainer() {

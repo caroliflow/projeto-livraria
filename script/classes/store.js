@@ -29,19 +29,22 @@ export default class Store {
     }
   }
 
-  placeItem(item, element) {  
+  placeItem(item, element) {
     let itemModel = `
-      <p id="item-${item.ID}">
-        Nome: ${item.NAME} </br>
-        Price: ${item.PRICE} </br>
-        Description: ${item.DESCRIPTION} </br>
-        Stock: ${item.STOCK} </br>
-        <img src="${item.IMAGE}"/> </br>
-        <button class="remove-btn" type="button">Remove</button> </br>
-        <button class="sell-btn" type="button">Sell Item</button>
-        <button class="edit-btn" type="button">Edit</button>
-        <span>${item.TYPE}</span> 
-      </p>
+      <div class="img-container">
+        <img src="${item.IMAGE}"/>
+      </div>
+      <div class="text-container">
+        <p class="name">${item.NAME}</p>
+        <p class="price">R$${item.PRICE}</p>
+        <p class="type"><u>${item.TYPE}</u></p>
+        <p class="description">${item.DESCRIPTION}</p>
+      </div>
+      <div class="btn-container">
+        <button type="button" class="sell-btn">BUY</button>
+        <button type="button" class="remove-btn">DELETE</button>
+      </div>
+      <span class="hide">${item.TYPE}</span>
     `;
 
     item.CONTAINER.innerHTML = itemModel;

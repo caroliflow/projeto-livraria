@@ -12,31 +12,25 @@
     <title>Comic Store</title>
   </head>
   <body>
-    <section class="file-container" id="f-c">
-      <img src="assets/images/store-icon.png" alt="" />
-      <input name="file" id="file" type="file" />
-      <label class="btn-file" for="file">Upload your JSON File</label>
-    </section>
     <section class="login-card">
       <form class="card">
-                <div class="card-header">
-                    <h2>Login</h2>
-                </div>
-                <div class="card-content">
-                    <div class="card-content-area">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" id="usuario" autocomplete="off">
-                    </div>
-                    <div class="card-content-area">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" autocomplete="off">
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <input type="submit" value="login" class="submit">
-                </div>
-
-            </form>
+        <div class="card-header">
+          <h2>Login</h2>
+        </div>
+        <div class="card-content">
+          <div class="card-content-area">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" autocomplete="off" />
+          </div>
+          <div class="card-content-area">
+            <label for="password">Senha</label>
+            <input type="password" id="password" autocomplete="off" />
+          </div>
+        </div>
+        <div class="card-footer">
+          <input type="submit" value="login" class="submit" />
+        </div>
+      </form>
     </section>
     <header>
       <div class="header-flat">
@@ -48,21 +42,16 @@
       </div>
     </header>
     <main>
-      <div class="cards">
-        <div class="card-model">
-          <img src="https://m.media-amazon.com/images/I/51Fa2gkL6tL.jpg" alt="">
-          <a class="name">A mão esquerda da escuridão</a>
-          <a class="price">R$ 55,90</a>
-          <a class="type"><u>book</u></a>
-          <a class="description">Genly Ai foi enviado a Gethen com a missão de convencer seus governantes a se unirem a uma grande comunidade universal.</a>
-          <form action="">
-            <button type="submit" class="buy-bnt">buy</button>
-            <button type="submit" class="delete-bnt">delete</button>
-          </form>
+      <section class="cards" id="items"></section>
+      <section class="file-container show-file" id="f-c">
+        <img src="assets/images/store-icon.png" alt="" />
+        <div class="drop-area" id="drop-area">
+          <label class="btn-file" for="file">Upload your JSON File</label>
+          <input name="file" type="file" id="file-input" />
         </div>
-      </div>
+      </section>
     </main>
     <footer></footer>
   </body>
-  <script src="script/script.js"></script>
+  <script src="script/main.js"></script>
 </html>

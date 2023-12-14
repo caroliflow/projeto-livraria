@@ -6,7 +6,7 @@ import { actions } from "./constants.js";
 
 const store = new Store();
 const render = document.getElementById("render");
-const test = document.getElementById("test");
+const items_section = document.getElementById("items");
 const download = document.getElementById("download");
 
 const login_form = document.getElementById("login");
@@ -15,9 +15,8 @@ let logged = false;
 const loggedUser = {
   EMAIL: "",
   PASSWORD: "",
-  TYPE: ""
-}
-
+  TYPE: "",
+};
 
 const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
@@ -84,12 +83,12 @@ download.addEventListener("click", () => {
   }
 
   const anchor = document.createElement("a");
-  anchor.href = "data:text/json;charset=utf-8;lang=pt-BR," + JSON.stringify(data);
+  anchor.href =
+    "data:text/json;charset=utf-8;lang=pt-BR," + JSON.stringify(data);
   anchor.download = "dados.json";
   anchor.click();
   console.log(anchor.href);
 });
-
 
 login_form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -112,6 +111,7 @@ login_form.addEventListener("submit", (event) => {
   if (login(auth)) {
     loggedUser["EMAIL"] = auth["EMAIL"];
     loggedUser["PASSWORD"] = auth["PASSWORD"];
+    logged = true;
     console.log("Logged in");
   } else {
     console.log("couldn't log in");
@@ -126,7 +126,7 @@ function login(auth) {
     if (user.email === auth["EMAIL"] && auth["PASSWORD"] === user.password) {
       loggedUser["TYPE"] = user.type;
       log = true;
-    } 
+    }
   });
 
   return log;
@@ -146,15 +146,15 @@ render.addEventListener("click", (event) => {
       product.img
     );
     store.addItem(item);
-    store.placeItem(item, test);
+    store.placeItem(item, items_section);
   });
 
   event.target.remove();
 });
 
 function searchItem(element) {
-  const item_id = Number(element.target.parentNode.id.split("-")[1]);
-  const item_type = element.target.parentNode.lastElementChild.textContent;
+  const item_id = Number(element.id.split("-")[1]);
+  const item_type = element.lastElementChild.textContent;
   let remove;
 
   store.allItems[item_type].forEach((item) => {
@@ -166,26 +166,25 @@ function searchItem(element) {
   return remove;
 }
 
-test.addEventListener("click", (event) => {
+items_section.addEventListener("click", (event) => {
+  let card = event.target.parentNode.parentNode;
   let button = event.target.className;
-  
-  if (button === "remove-btn") {
-    let item = searchItem(event);
+  let item = searchItem(card);
 
-    store.removeItem(item);
-    event.target.parentNode.remove();
+  switch (button) {
+    case "remove-btn":
+      store.removeItem(item);
+      card.remove();
+      console.log(store.allItems, card, item);
+      break;
 
-    console.log(store.allItems);
-
-  } else if (button === "sell-btn") {
-    let item = searchItem(event);
-  
-    if (item.STOCK > 0) {
-      item.removeStocks(1);
-    } else {
-      console.log("out of stock");
-    }
-
-    store.updateItem(item);
+    case "sell-btn":
+      if (item.STOCK > 0) {
+        item.removeStocks(1);
+      } else {
+        console.log("out of stock");
+      }
+      store.updateItem(item);
+      break;
   }
-})
+});
