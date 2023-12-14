@@ -7,7 +7,7 @@
 - Salvar e carregar dados em arquivo JSON
 - Login e logout
 - CRUD com dados das listas
-- Estilização com CSS e/ou BootsTrap
+- Estilização com CSS e/ou Bootstrap
 
 #### *FPOO - fundamentos da programação orientada a objeto
 
