@@ -9,6 +9,7 @@ const store = new Store();
 const items_section = document.getElementById("items");
 const download = document.getElementById("download");
 
+const modal_container = document.querySelector(".modal-container");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const open_modal_btn = document.querySelector(".login");
@@ -16,11 +17,13 @@ const close_modal_btn = document.querySelector(".btn-close");
 const login_form = document.getElementById("login");
 
 const open_modal = function() {
+  modal_container.classList.remove("hidden");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 }
 
 const close_modal = function() {
+  modal_container.classList.add("hidden");
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 }
