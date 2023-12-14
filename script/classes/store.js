@@ -44,10 +44,10 @@ export default class Store {
         <button class="sell-btn" type="button">BUY</button>
         <button class="remove-btn" type="button">DELETE</button>
         <button class="edit-btn" type="button">EDIT</button>
-        <button class="apply-btn hide" type="button">APPLY</button>
-        <button class="cancel-btn hide" type="button">CANCEL</button>
+        <button class="apply-btn hidden" type="button">APPLY</button>
+        <button class="cancel-btn hidden" type="button">CANCEL</button>
       </div>
-      <span class="hide">${item.TYPE}</span>
+      <span class="hidden">${item.TYPE}</span>
     `;
 
     item.CONTAINER.innerHTML = itemModel;

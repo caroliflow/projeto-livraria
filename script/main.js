@@ -9,7 +9,21 @@ const store = new Store();
 const items_section = document.getElementById("items");
 const download = document.getElementById("download");
 
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const open_modal_btn = document.querySelector(".login");
+const close_modal_btn = document.querySelector(".btn-close");
 const login_form = document.getElementById("login");
+
+const open_modal = function() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+}
+
+const close_modal = function() {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
 
 let logged = false;
 const loggedUser = {
@@ -22,6 +36,10 @@ const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
 
 let store_data;
+
+/*
+  THIS SECTION CONTAINS CODE FOR LOADING AND DOWNLOADING JSON FILES
+*/
 
 file_input.addEventListener("change", (event) => {
   event.stopPropagation();
@@ -93,6 +111,13 @@ download.addEventListener("click", () => {
   console.log(anchor.href);
 });
 
+/*
+  THIS SECTION CONTAINS CODE FOR THE LOGIN FUNCTIONALITY
+*/
+
+open_modal_btn.addEventListener("click", open_modal);
+close_modal_btn.addEventListener("click", close_modal);
+
 login_form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputs = event.target.childNodes;
@@ -135,6 +160,10 @@ function login(auth) {
   return log;
 }
 
+/*
+  GENERAL FUNCTIONS
+*/
+
 function render() {
   let products = store_data.products;
 
@@ -167,6 +196,10 @@ function searchItem(element) {
   return remove;
 }
 
+/*
+  THIS EVENT LISTENER TAKES THE EVENT FOR EVERY BUTTON ON THE ITEMS
+*/
+
 items_section.addEventListener("click", (event) => {
   let card = event.target.parentNode.parentNode;
   let text_container = card.querySelector(".text-container");
@@ -197,9 +230,9 @@ items_section.addEventListener("click", (event) => {
         text.contentEditable = "true";
       });
 
-      button.classList.toggle("hide");
-      apply.classList.toggle("hide");
-      cancel.classList.toggle("hide");
+      button.classList.toggle("hidden");
+      apply.classList.toggle("hidden");
+      cancel.classList.toggle("hidden");
 
       break;
 
@@ -218,9 +251,9 @@ items_section.addEventListener("click", (event) => {
         text.contentEditable = "false";
       });
 
-      button.classList.toggle("hide");
-      apply.classList.toggle("hide");
-      cancel.classList.toggle("hide");
+      button.classList.toggle("hidden");
+      apply.classList.toggle("hidden");
+      cancel.classList.toggle("hidden");
 
       store.updateItem(item);
       break;

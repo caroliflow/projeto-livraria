@@ -12,11 +12,35 @@
     <title>Comic Store</title>
   </head>
   <body>
-    <section class="login-card">
-      <form class="card" id="login">
-        <div class="card-header">
-          <h2>Login</h2>
+    <section class="modal-container">
+      <div class="modal hidden">
+        <div class="flex">
+          <h2>LOGIN</h2>
+          <button class="btn-close">✕</button>
         </div>
+        <div>
+          <form class="login-form" id="login">
+            <div>
+              <label for="usuario">Usuário</label>
+              <input type="text" id="usuario" autocomplete="off" />
+            </div>
+            <div>
+              <label for="password">Senha</label>
+              <input type="password" id="password" autocomplete="off" />
+            </div>
+            <button type="submit">LOGIN</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--section class="modal hidden">
+      <div class="flex">
+        <button class="btn-close">X</button>
+      </div>
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+      <form class="card" id="login">
         <div class="card-content">
           <div class="card-content-area">
             <label for="usuario">Usuário</label>
@@ -31,10 +55,11 @@
           <input type="submit" value="login" class="submit" />
         </div>
       </form>
-    </section>
+    </section!-->
+    <div class="overlay hidden"></div>
     <header>
       <div class="header-flat">
-        <span class="login">login</span>
+        <span class="login">LOGIN</span>
         <button type="button" id="download">DOWNLOAD</button>
       </div>
       <div class="header-center">

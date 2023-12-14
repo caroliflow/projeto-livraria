@@ -25,7 +25,7 @@ header {
   color: var(--purple);
 }
 
-.hide {
+.hidden {
   display: none;
 }
 
@@ -66,10 +66,6 @@ header {
 }
 
 /*modelo dos cards*/
-
-main {
-  /* display: none; */
-}
 
 .cards {
   display: grid;
