@@ -38,7 +38,7 @@
       "id": 1,
       "name": "Mistborn",
       "price": 10.5,
-      "description": "um belo livro",
+      "description": "Brandon Sanderson, um dos mais aclamados autores de fantasia da atualidade, está de volta com a aguardada Segunda Era de “Mistborn”. Muito pedida pelos fãs.",
       "type": "BOOK",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71rO9YgTk1L._AC_UF894,1000_QL80_.jpg"
@@ -47,7 +47,7 @@
       "id": 2,
       "name": "Relógio digital masculino",
       "price": 25,
-      "description": "um belo relógio",
+      "description": "Relógio digital azul",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://static.zattini.com.br/produtos/relogio-masculino-esportivo-digital-resistente-a-agua/06/5U2-0420-006/5U2-0420-006_zoom1.jpg?ts=1674815992&ims=544x"
@@ -56,7 +56,7 @@
       "id": 3,
       "name": "Calça jeans masculina",
       "price": 35,
-      "description": "uma bela calça",
+      "description": "Calça jeans azul, lavagem média, 95% algodão, 5% elástano.",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://outletespacohering.vtexassets.com/arquivos/ids/2940627/H1Q4-1FSN-C1.jpg?v=638362979475200000"
@@ -65,7 +65,7 @@
       "id": 4,
       "name": "Guilty Gear -Strive- Playstation 5, Mídia Física",
       "price": 40,
-      "description": "um belo jogo",
+      "description": "Game de luta desenvolvido e publicado pela Arc System Works. É a sétima edição principal da série Guilty Gear",
       "type": "GAME",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/81mcWVTH2xS.jpg"
@@ -74,7 +74,7 @@
       "id": 5,
       "name": "The Witcher 3 - Playstation 5, Mídia Física",
       "price": 40,
-      "description": "um belo jogo",
+      "description": "Terceiro e mais vendido jogo da franquia The Witcher da CD Pjekt Red.",
       "type": "GAME",
       "stock": 5,
       "img": "https://cdn.awsli.com.br/2500x2500/2112/2112399/produto/126448276/the-witcher-3-para-ps5-midia-digital-099a2ce0.jpg"
@@ -83,7 +83,7 @@
       "id": 6,
       "name": "Lapiseira",
       "price": 27,
-      "description": "um belo material",
+      "description": "Lapiseira simples 0.07mm.",
       "type": "SUPPLY",
       "stock": 5,
       "img": "https://www.frutodearte.com.br/media/catalog/product/cache/12/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/l/a/lapiseira-pentel-p207-07-preta.png"
@@ -92,7 +92,7 @@
       "id": 7,
       "name": "O Senho dos Anéis: O Retorno do Rei",
       "price": 45,
-      "description": "Um bom livro",
+      "description": "Terceiro e ultimo livro da cronologia original de Senhor dos Anéis, nesta história, Aragorn precisará adquirir a lendária espada Andúril para decidir o desfecho da batalha.",
       "type": "BOOK",
       "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/01/00/img/5202803/6/5202803653_1GG.jpg"
@@ -101,7 +101,7 @@
       "id": 8,
       "name": "Shadow of the Colossus - Playstation 4, Mídia Física",
       "price": 40,
-      "description": "um bom jogo",
+      "description": "Shadow of the Colossus, lançado no Japão como Wander and the Colossus, é um jogo eletrônico de ação-aventura desenvolvido pela SCE Japan Studio e publicado pela Sony Computer Entertainment.",
       "type": "GAME",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/81vPLT9c55L._AC_UF1000,1000_QL80_.jpg"
@@ -110,7 +110,7 @@
       "id": 9,
       "name": "Boné New Era - New York Yankees",
       "price": 150,
-      "description": "um belo boné",
+      "description": "O boné New Era® 59FIFTY® é confeccionado em tecido leve e recebe a bandeira New Era® na lateral esquerda. Moderna, a aba reta é estilosa e proteje o rosto dos raios solares.",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://static.zattini.com.br/produtos/bone-new-era-aba-reta-fechado-mlb-ny-yankees-basic/16/F83-6107-016/F83-6107-016_zoom1.jpg?ts=1694807356&ims=544x"
@@ -119,7 +119,7 @@
       "id": 10,
       "name": "Goku Action Figure",
       "price": 300,
-      "description": "um belo colecionável",
+      "description": "Action Figure goku SSJ Blue 25cm de altura.",
       "type": "COLLECTIBLE",
       "stock": 5,
       "img": "https://http2.mlstatic.com/D_NQ_NP_989143-MLB72167207085_102023-O.webp"
@@ -128,7 +128,7 @@
       "id": 11,
       "name": "As Branquelas, - dvd",
       "price": 10,
-      "description": "um filme engraçado",
+      "description": "Dois irmãos agentes do FBI, Marcus e Kevin Copeland, acidentalmente evitam que bandidos sejam presos em uma apreensão de drogas. Como castigo, eles são forçados a escoltar um par de socialites nos Hamptons.",
       "type": "MOVIE",
       "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/4748562169/imagens/dvd-as-branquelas-filme/4748562169_1_large.jpg"
@@ -137,7 +137,7 @@
       "id": 12,
       "name": "Metal Gear Rising: Revengeance - Xbox 360, Mídia Física",
       "price": 40,
-      "description": "um ótimo jogo",
+      "description": "Metal Gear Rising: Revengeance é um jogo eletrônico de Hack and slash produzido pela Platinum Games, dirigido por Kenji Saito e editado pela Konami para PlayStation 3 e Xbox 360",
       "type": "GAME",
       "stock": 5,
       "img": "https://retromtl.com/cdn/shop/products/IMG_5541-2_8366c0e5-4acf-498f-94b6-c489e955be11.jpg?v=1654889996"
@@ -146,7 +146,7 @@
       "id": 13,
       "name": "Lápis",
       "price": 1,
-      "description": "um bom material",
+      "description": "Lápis simples de madeira.",
       "type": "SUPPLY",
       "stock": 5,
       "img": "https://cdn.awsli.com.br/600x700/765/765263/produto/39799345/0fbcb9c427.jpg"
@@ -155,7 +155,7 @@
       "id": 14,
       "name": "Camiseta Unissex Attack On Titan",
       "price": 35,
-      "description": "uma bela camiseta",
+      "description": "Camiseta feita em 100% algodão com estampa da equipe de reconhecimento.",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://down-br.img.susercontent.com/file/3dccaf1ae2b96b994eb14677206a9a37"
@@ -163,8 +163,8 @@
     {
       "id": 15,
       "name": "Réplica colecionável manopla do infiníto",
-      "price": 1000,
-      "description": "um belo colecionável",
+      "price": 1500,
+      "description": "Réplica em tamanho real da manópla do infiníto",
       "type": "COLLECTIBLE",
       "stock": 5,
       "img": "https://blogdebrinquedo.com.br/wp-content/uploads/2018/03/20180305manopla-do-infinito-infinity-gauntlet-prop-replica-hot-toys-avengers-01.jpg"
@@ -173,7 +173,7 @@
       "id": 16,
       "name": "The Elder Scrolls V: Skyrim Special Edition - Playstation 4, Mídia Física",
       "price": 40,
-      "description": "um bom jogo",
+      "description": "The Elder Scrolls V: Skyrim é um jogo eletrônico de RPG de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks e é o quinto jogo principal da série The Elder Scrolls.",
       "type": "GAME",
       "stock": 5,
       "img": "https://dw0jruhdg6fis.cloudfront.net/producao/14695299/G/the_elder_scrolls_v_skyrim.jpg"
@@ -182,7 +182,7 @@
       "id": 17,
       "name": "Caneta esferográfica Bic",
       "price": 1,
-      "description": "um bom material",
+      "description": "Caneta básica esferográfica",
       "type": "SUPPLY",
       "stock": 5,
       "img": "https://images.tcdn.com.br/img/img_prod/847325/90_caneta_esferografica_bic_cristal_ponta_media_1_0mm_72623387_1_4aa2aa4291b0e3daeb8ca602ffd30b18.jpg"
@@ -191,7 +191,7 @@
       "id": 18,
       "name": "Par de meias Olympikus - Várias cores",
       "price": 15,
-      "description": "um bom par de meias",
+      "description": "Meias em algodão e elástano de cores variadas",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://d87n9o45kphpy.cloudfront.net/Custom/Content/Products/16/17/1617214_kit-meias-olympikus-cano-medio-stz-tres-pares-39-ao-44-color-5159862_l1_637532417635258158.jpg"
@@ -200,7 +200,7 @@
       "id": 19,
       "name": "Motoqueiro Fantasma - DVD",
       "price": 10,
-      "description": "um bom filme",
+      "description": "Filme estrelado por Nicolas Cage como Jhonny Blaze, que se viu obrigado a fazer um pácto para salvar seu pai, ele só não sabia o que viria á seguir.",
       "type": "MOVIE",
       "stock": 5,
       "img": "https://media.fstatic.com/SFqV9HHv8wXt486CISvPJngb4tA=/322x478/smart/filters:format(webp)/media/movies/covers/2011/09/787e9c37a6d5f8f0363c50b39e1ba503.jpg"
@@ -209,7 +209,7 @@
       "id": 20,
       "name": "Action Figure Homem de Ferro",
       "price": 300,
-      "description": "um bom colecionável",
+      "description": "Action Figure Homem de Ferro com 25 cm de altura.",
       "type": "COLLECTIBLE",
       "stock": 5,
       "img": "https://a-static.mlcdn.com.br/450x450/homem-de-ferro-iron-man-mk85-ultimato-action-figure-17-cm-actioncollection/actionkrypton/16023924154/547c7c088d7487b3951e3849956f41c1.jpeg"
@@ -218,7 +218,7 @@
       "id": 21,
       "name": "Mochila",
       "price": 130,
-      "description": "um bom mateial",
+      "description": "Mochila escolar preta básica.",
       "type": "SUPPLY",
       "stock": 5,
       "img": "https://http2.mlstatic.com/D_NQ_NP_666755-MLA53474931164_012023-O.webp"
@@ -227,7 +227,7 @@
       "id": 22,
       "name": "Shorts Masculino",
       "price": 55,
-      "description": "uma boa roupa",
+      "description": "Shorts masculino vermelho em poliéster.",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://cdn.awsli.com.br/2500x2500/304/304285/produto/165691424/novo-shorts-vinho-etiquetaemborrachada-aitvvz.jpg"
@@ -236,7 +236,7 @@
       "id": 23,
       "name": "Gift Cards",
       "price": 50,
-      "description": "bons gift cards",
+      "description": "Gift cards variádos.",
       "type": "GIFTCARD",
       "stock": 5,
       "img": "https://st.recargapay.com/public/av-a/img/lp_gifts/lprp_valepresente_jumbotron.png"
@@ -245,7 +245,7 @@
       "id": 24,
       "name": "Elden Ring - Playstation 5, Mídia Física",
       "price": 300,
-      "description": "um bom jogo",
+      "description": "Elden Ring é um jogo eletrônico de RPG de ação em terceira pessoa, desenvolvido pela FromSoftware e publicado pela Bandai Namco Entertainment",
       "type": "GAME",
       "stock": 5,
       "img": "https://images-americanas.b2w.io/produtos/01/00/img/4501722/3/4501722386_1SZ.jpg"
@@ -254,7 +254,7 @@
       "id": 25,
       "name": "Star Wars: A Vingança dos Sith - DVD",
       "price": "10",
-      "description": "um bom filme",
+      "description": "Episódio 3 da cronologia príncipal de Star Wars",
       "type": "MOVIE",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/61LYGcxF+xL._AC_UF894,1000_QL80_.jpg"
@@ -263,7 +263,7 @@
       "id": 26,
       "name": "Harry Potter e o Cálice de Fogo",
       "price": 35,
-      "description": "Um bom livro",
+      "description": "Quarto livro da cronologia de Harry Potter",
       "type": "BOOK",
       "stock": 5,
       "img": "https://down-br.img.susercontent.com/file/0c0400ccadc79c266ff1f07ec2b48898"
@@ -272,7 +272,7 @@
       "id": 27,
       "name": "Estojo Escolar",
       "price": 55,
-      "description": "um bom mateial",
+      "description": "Estojo escolar espaçosso em poliéster.",
       "type": "SUPPLY",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71ZWhGQri+L._AC_SX522_.jpg"
@@ -281,7 +281,7 @@
       "id": 28,
       "name": "Dungeons and Dragons - RPG de mesa",
       "price": 200,
-      "description": "um bom RPG",
+      "description": "RPG de mesa para vários jogadores",
       "type": "GAME",
       "stock": 5,
       "img": "https://images.tcdn.com.br/img/img_prod/1041703/dungeons_dragons_waterdeep_a_masmorra_do_mago_louco_2251_1_072cabe647f2ae8b4b9639b570a45c98.jpg"
@@ -290,7 +290,7 @@
       "id": 29,
       "name": "Spy X Family - Mangá, Volume 1",
       "price": 35,
-      "description": "um bom mangá",
+      "description": "primeiro volume do mangá escrito e ilustrado por Tatsuia Endo",
       "type": "BOOK",
       "stock": 5,
       "img": "https://m.media-amazon.com/images/I/71RPJe1eVCL._AC_UF894,1000_QL80_.jpg"
@@ -299,7 +299,7 @@
       "id": 30,
       "name": "Óculos escuros aviador",
       "price": 150,
-      "description": "um bom óculos",
+      "description": "Óculos escuros estilo aviador clássico",
       "type": "CLOTHING",
       "stock": 5,
       "img": "https://chillibeans.vteximg.com.br/arquivos/ids/505398-1000-1000/OC-MT-3614-2022_300kb.jpg?v=638179587706500000"
