@@ -14,18 +14,7 @@ const overlay = document.querySelector(".overlay");
 const open_modal_btn = document.querySelector(".login");
 const close_modal_btn = document.querySelector(".btn-close");
 const login_form = document.getElementById("login");
-
-const open_modal = function() {
-  modal_container.classList.remove("hidden");
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-}
-
-const close_modal = function() {
-  modal_container.classList.add("hidden");
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-}
+const logout_btn = document.getElementById("exit");
 
 let logged = false;
 const loggedUser = {
@@ -38,6 +27,36 @@ const drop_area = document.getElementById("drop-area");
 const file_input = document.getElementById("file-input");
 
 let store_data;
+
+const logout = function () {
+  for (let key in loggedUser) {
+    loggedUser[key] = "";
+  }
+  logged = false;
+
+  const cards = document.querySelectorAll(".card-model");
+  cards.forEach((card) => {
+    let item = searchItem(card);
+    removeButtons(item);
+    store.updateItem(item);
+  });
+
+  logout_btn.classList.toggle("hidden");
+  download.classList.toggle("hidden");
+  open_modal_btn.classList.toggle("hidden");
+};
+
+const open_modal = function () {
+  modal_container.classList.remove("hidden");
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const close_modal = function () {
+  modal_container.classList.add("hidden");
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
 
 /*
   THIS SECTION CONTAINS CODE FOR LOADING AND DOWNLOADING JSON FILES
@@ -119,6 +138,7 @@ download.addEventListener("click", () => {
 
 open_modal_btn.addEventListener("click", open_modal);
 close_modal_btn.addEventListener("click", close_modal);
+logout_btn.addEventListener("click", logout);
 
 login_form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -134,15 +154,25 @@ login_form.addEventListener("submit", (event) => {
   if (login(auth)) {
     loggedUser["EMAIL"] = auth["EMAIL"];
     loggedUser["PASSWORD"] = auth["PASSWORD"];
+
     logged = true;
-    placeButtons();
+
+    const cards = document.querySelectorAll(".card-model");
+    cards.forEach((card) => {
+      let item = searchItem(card);
+      addButtons(item);
+      store.updateItem(item);
+    });
+
+    close_modal();
+    logout_btn.classList.toggle("hidden");
+    download.classList.toggle("hidden");
+    open_modal_btn.classList.toggle("hidden");
+
     console.log("Logged in");
   } else {
     console.log("couldn't log in");
   }
-
-  close_modal();
-  open_modal_btn.classList.toggle("hidden");
 });
 
 function login(auth) {
@@ -179,35 +209,34 @@ function render() {
     store.addItem(item);
     store.placeItem(item, items_section);
   });
-};
+}
 
-function placeButtons() {
-  const cards = items_section.querySelectorAll(".card-model");
-
-  cards.forEach((card) => {
-    let item = searchItem(card);
-    if (logged) {
-      if (has_permission(loggedUser, actions.ADD_SELL)) {
-        addButton(item, "sell-btn", "BUY");
-      }
-      if (has_permission(loggedUser, actions.REMOVE_ITEM)) {
-        addButton(item, "remove-btn", "REMOVE");
-      }
-      if (has_permission(loggedUser, actions.MODIFY_ITEM)) {
-        addButton(item, "edit-btn", "EDIT");
-        addButton(item, "apply-btn hidden", "APPLY");
-        addButton(item, "cancel-btn hidden", "CANCEL");
-      }
-    }
-    store.updateItem(item);
+function removeButtons(item) {
+  const buttons = item.CONTAINER.getElementsByTagName("button");
+  buttons.forEach((button) => {
+    button.remove();
   });
 }
 
-function addButton(item, className, content) {
-  let button = `
-    <button class="${className}">${content}</button>
-  `;
-  item.appendModel(button);
+function addButtons(item) {
+  const button = function (className, content) {
+    let button = `
+      <button class="${className}">${content}</button>
+    `;
+    item.appendModel(button);
+  };
+
+  if (has_permission(loggedUser, actions.ADD_SELL)) {
+    button("sell-btn", "BUY");
+  }
+  if (has_permission(loggedUser, actions.REMOVE_ITEM)) {
+    button("remove-btn", "REMOVE");
+  }
+  if (has_permission(loggedUser, actions.MODIFY_ITEM)) {
+    button("edit-btn", "EDIT");
+    button("apply-btn hidden", "APPLY");
+    button("cancel-btn hidden", "CANCEL");
+  }
 }
 
 function searchItem(element) {
@@ -229,7 +258,7 @@ function searchItem(element) {
 */
 
 items_section.addEventListener("click", (event) => {
-  let card = event.target.parentNode.parentNode;
+  let card = event.target.parentNode;
   let text_container = card.querySelector(".text-container");
 
   let button = event.target;
@@ -269,7 +298,8 @@ items_section.addEventListener("click", (event) => {
       let name = text_container.querySelector(".name").textContent;
       let price = Number(text_container.querySelector(".price").textContent);
       let type = text_container.querySelector(".type").textContent;
-      let description = text_container.querySelector(".description").textContent;
+      let description =
+        text_container.querySelector(".description").textContent;
 
       item.editName(name);
       item.editPrice(price);
