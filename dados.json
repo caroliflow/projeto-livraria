@@ -23,14 +23,6 @@
       "password": "1234",
       "position": "Veterinário",
       "type": "EMPLOYEE"
-    },
-    {
-      "id": 4,
-      "nome": "Josevaldo Pereira dos Santos",
-      "email": "jose@js.com",
-      "password": 1234,
-      "position": "none",
-      "type": "GUEST"
     }
   ],
   "products": [
