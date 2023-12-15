@@ -8,6 +8,19 @@ export default class Product {
     this.stock = stock;
     this.image = img;
 
+    this.model = `
+      <div class="img-container">
+        <img src="${this.image}"/>
+      </div>
+      <div class="text-container">
+        <p class="name">${this.name}</p>
+        <p class="price">R$${this.price}</p>
+        <p class="type"><u>${this.type}</u></p>
+        <p class="description">${this.description}</p>
+      </div>
+      <div class="btn-container"></div>
+    `;
+
     this.container = document.createElement("div");
     this.container.classList.add("card-model");
     this.container.setAttribute("id", `item-${this.id}`);
@@ -15,6 +28,10 @@ export default class Product {
 
   updateContainer() {
     this.container.innerHTML = "";
+  }
+
+  appendModel(element) {
+    this.model += element;
   }
 
   editName(name) {
@@ -61,6 +78,9 @@ export default class Product {
   }
   get IMAGE() {
     return this.image;
+  }
+  get MODEL() {
+    return this.model;
   }
   get CONTAINER() {
     return this.container;

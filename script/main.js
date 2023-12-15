@@ -5,7 +5,6 @@ import has_permission from "./permissions.js";
 import { actions } from "./constants.js";
 
 const store = new Store();
-//const render = document.getElementById("render");
 const items_section = document.getElementById("items");
 const download = document.getElementById("download");
 
@@ -32,7 +31,7 @@ let logged = false;
 const loggedUser = {
   EMAIL: "",
   PASSWORD: "",
-  TYPE: "",
+  TYPE: "GUEST",
 };
 
 const drop_area = document.getElementById("drop-area");
@@ -123,26 +122,20 @@ close_modal_btn.addEventListener("click", close_modal);
 
 login_form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const inputs = event.target.childNodes;
+
+  const user = event.target.querySelector("#user").value;
+  const password = event.target.querySelector("#password").value;
 
   const auth = {
-    EMAIL: "",
-    PASSWORD: "",
+    EMAIL: user,
+    PASSWORD: password,
   };
-
-  for (let i = 0; i < inputs.length; i++) {
-    let input = inputs[i];
-    if (input.id == "email") {
-      auth["EMAIL"] = input.value;
-    } else if (input.id == "password") {
-      auth["PASSWORD"] = input.value;
-    }
-  }
 
   if (login(auth)) {
     loggedUser["EMAIL"] = auth["EMAIL"];
     loggedUser["PASSWORD"] = auth["PASSWORD"];
     logged = true;
+    placeButtons();
     console.log("Logged in");
   } else {
     console.log("couldn't log in");
@@ -185,9 +178,39 @@ function render() {
   });
 };
 
+function placeButtons() {
+  const cards = items_section.querySelectorAll(".card-model");
+
+  cards.forEach((card) => {
+    let item = searchItem(card);
+    if (logged) {
+      if (has_permission(loggedUser, actions.ADD_SELL)) {
+        addButton(item, "sell-btn", "BUY");
+      }
+      if (has_permission(loggedUser, actions.REMOVE_ITEM)) {
+        addButton(item, "remove-btn", "REMOVE");
+      }
+      if (has_permission(loggedUser, actions.MODIFY_ITEM)) {
+        addButton(item, "edit-btn", "EDIT");
+        addButton(item, "apply-btn hidden", "APPLY");
+        addButton(item, "cancel-btn hidden", "CANCEL");
+      }
+    }
+    console.log(item);
+    store.updateItem(item);
+  });
+}
+
+function addButton(item, className, content) {
+  let button = `
+    <button class="${className}">${content}</button>
+  `;
+  item.appendModel(button);
+}
+
 function searchItem(element) {
   const item_id = Number(element.id.split("-")[1]);
-  const item_type = element.lastElementChild.textContent;
+  const item_type = element.querySelector(".type").textContent;
   let remove;
 
   store.allItems[item_type].forEach((item) => {
@@ -200,7 +223,7 @@ function searchItem(element) {
 }
 
 /*
-  THIS EVENT LISTENER TAKES THE EVENT FOR EVERY BUTTON ON THE ITEMS
+  THIS EVENT LISTENER HANDLES THE EVENTS FOR EVERY BUTTON IN THE ITEMS
 */
 
 items_section.addEventListener("click", (event) => {
@@ -208,6 +231,7 @@ items_section.addEventListener("click", (event) => {
   let text_container = card.querySelector(".text-container");
 
   let button = event.target;
+  let edit = card.querySelector(".edit-btn");
   let apply = card.querySelector(".apply-btn");
   let cancel = card.querySelector(".cancel-btn");
 
@@ -233,7 +257,7 @@ items_section.addEventListener("click", (event) => {
         text.contentEditable = "true";
       });
 
-      button.classList.toggle("hidden");
+      edit.classList.toggle("hidden");
       apply.classList.toggle("hidden");
       cancel.classList.toggle("hidden");
 
@@ -254,7 +278,7 @@ items_section.addEventListener("click", (event) => {
         text.contentEditable = "false";
       });
 
-      button.classList.toggle("hidden");
+      edit.classList.toggle("hidden");
       apply.classList.toggle("hidden");
       cancel.classList.toggle("hidden");
 
@@ -266,9 +290,9 @@ items_section.addEventListener("click", (event) => {
         text.contentEditable = "false";
       });
 
-      button.classList.toggle("hide");
-      apply.classList.toggle("hide");
-      cancel.classList.toggle("hide");
+      edit.classList.toggle("hidden");
+      apply.classList.toggle("hidden");
+      cancel.classList.toggle("hidden");
 
       store.updateItem(item);
       break;

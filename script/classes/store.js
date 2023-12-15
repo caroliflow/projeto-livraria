@@ -30,27 +30,7 @@ export default class Store {
   }
 
   placeItem(item, element) {
-    let itemModel = `
-      <div class="img-container">
-        <img src="${item.IMAGE}"/>
-      </div>
-      <div class="text-container">
-        <p class="name">${item.NAME}</p>
-        <p class="price">R$${item.PRICE}</p>
-        <p class="type"><u>${item.TYPE}</u></p>
-        <p class="description">${item.DESCRIPTION}</p>
-      </div>
-      <div class="btn-container">
-        <button class="sell-btn" type="button">BUY</button>
-        <button class="remove-btn" type="button">DELETE</button>
-        <button class="edit-btn" type="button">EDIT</button>
-        <button class="apply-btn hidden" type="button">APPLY</button>
-        <button class="cancel-btn hidden" type="button">CANCEL</button>
-      </div>
-      <span class="hidden">${item.TYPE}</span>
-    `;
-
-    item.CONTAINER.innerHTML = itemModel;
+    item.CONTAINER.innerHTML = item.MODEL;
     if (element != item.CONTAINER) {
       element.append(item.CONTAINER);
     }
