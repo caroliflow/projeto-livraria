@@ -82,9 +82,8 @@ header {
   background-color: var(--pink);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 300px;
-  max-height: 500px;
+  height: 700px;
   margin-top: 10em;
   border-radius: 20px;
   padding: 20px;
@@ -102,6 +101,7 @@ header {
   height: 300px;
   width: 250px;
   border-radius: 15px;
+  margin-bottom: 30px;
 }
 
 .img-container {

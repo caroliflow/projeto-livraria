@@ -21,6 +21,10 @@
   width: auto;
 }
 
+.file-input {
+  width: 350px;
+}
+
 input[type="file"]::-webkit-file-upload-button {
   visibility: hidden;
 }
