@@ -45,7 +45,7 @@
     },
     {
       "id": 2,
-      "name": "Relógio",
+      "name": "Relógio digital masculino",
       "price": 25,
       "description": "um belo relógio",
       "type": "CLOTHING",
@@ -54,7 +54,7 @@
     },
     {
       "id": 3,
-      "name": "Calça",
+      "name": "Calça jeans masculina",
       "price": 35,
       "description": "uma bela calça",
       "type": "CLOTHING",
@@ -63,7 +63,7 @@
     },
     {
       "id": 4,
-      "name": "Guilty Gear -Strive-",
+      "name": "Guilty Gear -Strive- Playstation 5, Mídia Física",
       "price": 40,
       "description": "um belo jogo",
       "type": "GAME",
@@ -72,7 +72,7 @@
     },
     {
       "id": 5,
-      "name": "The Witcher 3",
+      "name": "The Witcher 3 - Playstation 5, Mídia Física",
       "price": 40,
       "description": "um belo jogo",
       "type": "GAME",
@@ -99,7 +99,7 @@
     },
     {
       "id": 8,
-      "name": "Shadow of the Colossus",
+      "name": "Shadow of the Colossus - Playstation 4, Mídia Física",
       "price": 40,
       "description": "um bom jogo",
       "type": "GAME",
@@ -108,7 +108,7 @@
     },
     {
       "id": 9,
-      "name": "Boné New York Yankees",
+      "name": "Boné New Era - New York Yankees",
       "price": 150,
       "description": "um belo boné",
       "type": "CLOTHING",
@@ -126,7 +126,7 @@
     },
     {
       "id": 11,
-      "name": "As Branquelas",
+      "name": "As Branquelas, - dvd",
       "price": 10,
       "description": "um filme engraçado",
       "type": "MOVIE",
@@ -135,7 +135,7 @@
     },
     {
       "id": 12,
-      "name": "Metal Gear Rising: Revengeance",
+      "name": "Metal Gear Rising: Revengeance - Xbox 360, Mídia Física",
       "price": 40,
       "description": "um ótimo jogo",
       "type": "GAME",
@@ -153,7 +153,7 @@
     },
     {
       "id": 14,
-      "name": "Camiseta Attack On Titan",
+      "name": "Camiseta Unissex Attack On Titan",
       "price": 35,
       "description": "uma bela camiseta",
       "type": "CLOTHING",
@@ -162,7 +162,7 @@
     },
     {
       "id": 15,
-      "name": "Réplica Manopla do Infiníto",
+      "name": "Réplica colecionável manopla do infiníto",
       "price": 1000,
       "description": "um belo colecionável",
       "type": "COLLECTIBLE",
@@ -171,7 +171,7 @@
     },
     {
       "id": 16,
-      "name": "The Elder Scrolls V: Skyrim",
+      "name": "The Elder Scrolls V: Skyrim Special Edition - Playstation 4, Mídia Física",
       "price": 40,
       "description": "um bom jogo",
       "type": "GAME",
@@ -180,7 +180,7 @@
     },
     {
       "id": 17,
-      "name": "Caneta Esferográfica",
+      "name": "Caneta esferográfica Bic",
       "price": 1,
       "description": "um bom material",
       "type": "SUPPLY",
@@ -189,7 +189,7 @@
     },
     {
       "id": 18,
-      "name": "Par de Meias",
+      "name": "Par de meias Olympikus - Várias cores",
       "price": 15,
       "description": "um bom par de meias",
       "type": "CLOTHING",
@@ -198,7 +198,7 @@
     },
     {
       "id": 19,
-      "name": "Motoqueiro Fantasma",
+      "name": "Motoqueiro Fantasma - DVD",
       "price": 10,
       "description": "um bom filme",
       "type": "MOVIE",
@@ -243,7 +243,7 @@
     },
     {
       "id": 24,
-      "name": "Elden Ring",
+      "name": "Elden Ring - Playstation 5, Mídia Física",
       "price": 300,
       "description": "um bom jogo",
       "type": "GAME",
@@ -252,7 +252,7 @@
     },
     {
       "id": 25,
-      "name": "Star Wars: A Vingança dos Sith",
+      "name": "Star Wars: A Vingança dos Sith - DVD",
       "price": "10",
       "description": "um bom filme",
       "type": "MOVIE",
@@ -279,7 +279,7 @@
     },
     {
       "id": 28,
-      "name": "Dungeons and Dragons",
+      "name": "Dungeons and Dragons - RPG de mesa",
       "price": 200,
       "description": "um bom RPG",
       "type": "GAME",
@@ -288,7 +288,7 @@
     },
     {
       "id": 29,
-      "name": "Spy X Family",
+      "name": "Spy X Family - Mangá, Volume 1",
       "price": 35,
       "description": "um bom mangá",
       "type": "BOOK",
@@ -297,7 +297,7 @@
     },
     {
       "id": 30,
-      "name": "Óculos Escuros",
+      "name": "Óculos escuros aviador",
       "price": 150,
       "description": "um bom óculos",
       "type": "CLOTHING",
