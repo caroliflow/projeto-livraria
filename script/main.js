@@ -140,6 +140,9 @@ login_form.addEventListener("submit", (event) => {
   } else {
     console.log("couldn't log in");
   }
+
+  close_modal();
+  open_modal_btn.classList.toggle("hidden");
 });
 
 function login(auth) {
@@ -196,7 +199,6 @@ function placeButtons() {
         addButton(item, "cancel-btn hidden", "CANCEL");
       }
     }
-    console.log(item);
     store.updateItem(item);
   });
 }
