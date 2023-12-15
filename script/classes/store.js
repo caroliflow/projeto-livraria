@@ -36,6 +36,26 @@ export default class Store {
     }
   }
 
+  addSell(item, seller, element) {
+    let sell = {
+      name: item.NAME,
+      price: item.PRICE,
+      seller: seller["NAME"],
+    };
+    this._sells.push(sell);
+
+    console.log(sell["seller"]);
+    let model = `
+      <div class="sell">
+        <p>vendedor: ${sell["seller"]}</p>
+        <p>item: ${sell["name"]}</p>
+        <p>valor: ${sell["seller"]}</p>
+      </div>
+    `;
+
+    element.innerHTML += model;
+  }
+
   get allItems() {
     return this._products;
   }

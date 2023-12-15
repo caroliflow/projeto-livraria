@@ -7,9 +7,12 @@ import { actions } from "./constants.js";
 const store = new Store();
 const items_section = document.getElementById("items");
 const download = document.getElementById("download");
+const sell = document.getElementById("sell");
+const sell_modal = document.getElementById("sell-modal");
+const close_sell = sell_modal.querySelector(".btn-close");
 
 const modal_container = document.querySelector(".modal-container");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#login-modal");
 const overlay = document.querySelector(".overlay");
 const open_modal_btn = document.querySelector(".login");
 const close_modal_btn = document.querySelector(".btn-close");
@@ -18,8 +21,7 @@ const logout_btn = document.getElementById("exit");
 
 let logged = false;
 const loggedUser = {
-  EMAIL: "",
-  PASSWORD: "",
+  NAME: "",
   TYPE: "GUEST",
 };
 
@@ -37,8 +39,7 @@ const logout = function () {
   const cards = document.querySelectorAll(".card-model");
   cards.forEach((card) => {
     let item = searchItem(card);
-    removeButtons(item);
-    store.updateItem(item);
+    addButtons(item);
   });
 
   logout_btn.classList.toggle("hidden");
@@ -112,6 +113,7 @@ download.addEventListener("click", () => {
   };
 
   store_data.users.forEach((user) => {
+    console.log(user);
     data["users"].push(user);
   });
 
@@ -119,8 +121,16 @@ download.addEventListener("click", () => {
   for (let key in store.allItems) {
     store.allItems[key].forEach((item) => {
       id++;
-      item.id = id;
-      data["products"].push(item);
+      let itemObj = {
+        id: id,
+        name: item.NAME,
+        price: item.PRICE,
+        description: item.DESCRIPTION,
+        type: item.TYPE,
+        stock: item.STOCK,
+        img: item.IMAGE,
+      };
+      data["products"].push(itemObj);
     });
   }
 
@@ -152,16 +162,12 @@ login_form.addEventListener("submit", (event) => {
   };
 
   if (login(auth)) {
-    loggedUser["EMAIL"] = auth["EMAIL"];
-    loggedUser["PASSWORD"] = auth["PASSWORD"];
-
     logged = true;
 
     const cards = document.querySelectorAll(".card-model");
     cards.forEach((card) => {
       let item = searchItem(card);
       addButtons(item);
-      store.updateItem(item);
     });
 
     close_modal();
@@ -182,12 +188,30 @@ function login(auth) {
   users.forEach((user) => {
     if (user.email === auth["EMAIL"] && auth["PASSWORD"] === user.password) {
       loggedUser["TYPE"] = user.type;
+      loggedUser["NAME"] = user.nome;
       log = true;
     }
   });
 
   return log;
 }
+
+/*
+  SELL FUNCTIONALITY
+*/
+
+sell.addEventListener("click", () => {
+  modal_container.classList.toggle("hidden");
+  sell_modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+});
+
+close_sell.addEventListener("click", () => {
+  console.log("close");
+  modal_container.classList.toggle("hidden");
+  sell_modal.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+});
 
 /*
   GENERAL FUNCTIONS
@@ -213,9 +237,11 @@ function render() {
 
 function removeButtons(item) {
   const buttons = item.CONTAINER.getElementsByTagName("button");
-  buttons.forEach((button) => {
+  for (let i = 0; i < buttons.length; i++) {
+    let button = buttons[i];
     button.remove();
-  });
+    store.updateItem(item);
+  }
 }
 
 function addButtons(item) {
@@ -223,20 +249,23 @@ function addButtons(item) {
     let button = `
       <button class="${className}">${content}</button>
     `;
-    item.appendModel(button);
+    item.append(button);
   };
 
-  if (has_permission(loggedUser, actions.ADD_SELL)) {
-    button("sell-btn", "BUY");
+  if (logged) {
+    if (has_permission(loggedUser, actions.ADD_SELL)) {
+      button("sell-btn", "BUY");
+    }
+    if (has_permission(loggedUser, actions.REMOVE_ITEM)) {
+      button("remove-btn", "REMOVE");
+    }
+    // if (has_permission(loggedUser, actions.MODIFY_ITEM)) {
+    //   button("edit-btn", "EDIT");
+    //   button("apply-btn hidden", "APPLY");
+    //   button("cancel-btn hidden", "CANCEL");
+    // }
   }
-  if (has_permission(loggedUser, actions.REMOVE_ITEM)) {
-    button("remove-btn", "REMOVE");
-  }
-  if (has_permission(loggedUser, actions.MODIFY_ITEM)) {
-    button("edit-btn", "EDIT");
-    button("apply-btn hidden", "APPLY");
-    button("cancel-btn hidden", "CANCEL");
-  }
+  store.updateItem(item);
 }
 
 function searchItem(element) {
@@ -272,61 +301,64 @@ items_section.addEventListener("click", (event) => {
     case "remove-btn":
       store.removeItem(item);
       card.remove();
+      console.log("removed");
       break;
 
     case "sell-btn":
       if (item.STOCK > 0) {
         item.removeStocks(1);
+        store.addSell(item, loggedUser["NAME"], sell_modal);
+        console.log(loggedUser["NAME"]);
       } else {
         console.log("out of stock");
       }
       store.updateItem(item);
       break;
 
-    case "edit-btn":
-      text_container.childNodes.forEach((text) => {
-        text.contentEditable = "true";
-      });
+    // case "edit-btn":
+    //   text_container.childNodes.forEach((text) => {
+    //     text.contentEditable = "true";
+    //   });
 
-      edit.classList.toggle("hidden");
-      apply.classList.toggle("hidden");
-      cancel.classList.toggle("hidden");
+    //   edit.classList.toggle("hidden");
+    //   apply.classList.toggle("hidden");
+    //   cancel.classList.toggle("hidden");
 
-      break;
+    //   break;
 
-    case "apply-btn":
-      let name = text_container.querySelector(".name").textContent;
-      let price = Number(text_container.querySelector(".price").textContent);
-      let type = text_container.querySelector(".type").textContent;
-      let description =
-        text_container.querySelector(".description").textContent;
+    // case "apply-btn":
+    //   let name = text_container.querySelector(".name").textContent;
+    //   let price = Number(text_container.querySelector(".price").textContent);
+    //   let type = text_container.querySelector(".type").textContent;
+    //   let description =
+    //     text_container.querySelector(".description").textContent;
 
-      item.editName(name);
-      item.editPrice(price);
-      item.editType(type);
-      item.editDescription(description);
+    //   item.editName(name);
+    //   item.editPrice(price);
+    //   item.editType(type);
+    //   item.editDescription(description);
 
-      text_container.childNodes.forEach((text) => {
-        text.contentEditable = "false";
-      });
+    //   text_container.childNodes.forEach((text) => {
+    //     text.contentEditable = "false";
+    //   });
 
-      edit.classList.toggle("hidden");
-      apply.classList.toggle("hidden");
-      cancel.classList.toggle("hidden");
+    //   edit.classList.toggle("hidden");
+    //   apply.classList.toggle("hidden");
+    //   cancel.classList.toggle("hidden");
 
-      store.updateItem(item);
-      break;
+    //   store.updateItem(item);
+    //   break;
 
-    case "cancel-btn":
-      text_container.childNodes.forEach((text) => {
-        text.contentEditable = "false";
-      });
+    // case "cancel-btn":
+    //   text_container.childNodes.forEach((text) => {
+    //     text.contentEditable = "false";
+    //   });
 
-      edit.classList.toggle("hidden");
-      apply.classList.toggle("hidden");
-      cancel.classList.toggle("hidden");
+    //   edit.classList.toggle("hidden");
+    //   apply.classList.toggle("hidden");
+    //   cancel.classList.toggle("hidden");
 
-      store.updateItem(item);
-      break;
+    //   store.updateItem(item);
+    //   break;
   }
 });

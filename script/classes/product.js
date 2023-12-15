@@ -30,7 +30,7 @@ export default class Product {
     this.container.innerHTML = "";
   }
 
-  appendModel(element) {
+  append(element) {
     this.model += element;
   }
 
