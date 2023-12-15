@@ -5,7 +5,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 28em;
+  margin-top: 20em;
 }
 
 .show-file {
@@ -18,7 +18,7 @@
 }
 
 .drop-area {
-  width: 500px;
+  width: auto;
 }
 
 input[type="file"]::-webkit-file-upload-button {

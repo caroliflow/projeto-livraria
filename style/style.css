@@ -17,6 +17,10 @@
 body {
   background-color: var(--purple);
 }
+ 
+button {
+  cursor: pointer;
+}
 
 header {
   display: flex;
@@ -80,7 +84,7 @@ header {
   flex-direction: column;
   justify-content: center;
   width: 300px;
-  height: fit-content;
+  max-height: 500px;
   margin-top: 10em;
   border-radius: 20px;
   padding: 20px;
@@ -116,7 +120,7 @@ header {
 
 .card-model button {
   height: 50px;
-  width: 400px;
+  width: 300px;
   margin-top: 12px;
   border-radius: 20px;
   border: 0px solid white;
@@ -132,4 +136,13 @@ header {
 
 .remove-bnt {
   display: none;
+}
+
+header button  {
+  border: 0px;
+  height: 30px;
+  width: 50px;
+  background-color: var(--red);
+  border-radius: 15px;
+  margin-right: 30px;
 }
