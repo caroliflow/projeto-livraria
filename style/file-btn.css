@@ -5,6 +5,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 28em;
 }
 
 .show-file {
@@ -28,7 +29,7 @@ input[type="file"]::before {
   content: "Upload your JSON File";
   display: inline-block;
   background-color: var(--pink);
-  border: 1px solid var(--red);
+  border: 0px solid var(--red);
   border-radius: 10px;
   padding: 1em;
   outline: none;
